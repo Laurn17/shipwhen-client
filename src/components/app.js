@@ -3,7 +3,7 @@ import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
 import LandingPage from './landing-page';
 import BusPage from './bus-page';
 import LoginForm from './login-form';
-import SignUp from './sign-up'
+import SignupForm from './signup-form'
 
 import './app.css';
 
@@ -20,7 +20,7 @@ export default function App(props) {
                         <Link to="/login-form">Log In</Link>
                     </button>
                     <button>
-                        <Link to="/sign-up">Sign Up</Link>
+                        <Link to="/signup-form">Sign Up</Link>
                     </button>
 
                 </header>
@@ -28,8 +28,8 @@ export default function App(props) {
 
                     <Route exact path="/" component={LandingPage} />
                     <Route exact path="/bus-page/:busId" component={BusPage} />
-                    <Route exact path="/login-form" component={Login-Form} />
-                    <Route exact path="/sign-up" component={SignUp} />
+                    <Route exact path="/login-form" component={LoginForm} />
+                    <Route exact path="/signup-form" component={SignupForm} />
 
                 </main>
             </div>
