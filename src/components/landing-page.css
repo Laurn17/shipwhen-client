@@ -1,0 +1,70 @@
+* {
+  box-sizing: border-box;
+}
+
+.landing-page {
+font-family: "Open Sans",
+  sans-serif;
+  font-size: 20px;
+  color: rgb(84, 87, 255);
+  text-align: center;
+  line-height: 1.5;
+  width: 100%;
+  margin-top: 65px;
+  margin-bottom: 100px;
+}
+
+#landing-header {
+  height: 200px;
+  background-image: url("https://image.shutterstock.com/image-illustration/freight-transportation-packages-shipment-warehouse-450w-428151925.jpg");
+  
+}
+
+#landing-header h2 {
+  text-shadow: 1px 1px 1px;
+  padding-top: 80px;
+  color: rgb(36, 36, 36);
+}
+
+#landing-search {
+  padding-top: 50px;
+  background-color: rgb(238, 238, 238);
+  text-align: center;
+  min-height: 150px;
+}
+
+#landing-search form {
+  margin:0 auto;
+  text-align: center;
+}
+
+#landing-search input {
+    width: 60%;
+    font-size: 16px;
+    margin: 0px auto 15px auto;
+    border-radius: 5px;
+    height: 36px;
+    padding: 5px;
+    color: grey;
+}
+
+#landing-description {
+  padding: 15px 50px 20px 50px;
+  background-color: rgb(238, 238, 238)
+}
+
+#landing-description p {
+  padding: 15px 20px;
+  border: 2px solid rgb(84, 87, 255);
+  border-radius: 5px;
+  background-color: white;
+  font-size: 18px;
+}
+
+footer {
+  background-color: rgb(36, 36, 36);
+  color: white;
+  height: 55px;
+  width: 100%;
+  margin-top: -20px;
+}

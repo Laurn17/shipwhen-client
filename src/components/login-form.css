@@ -1,0 +1,47 @@
+body {
+  box-sizing: border-box;
+
+}
+
+#login {   
+    border: 1px solid rgb(49, 52, 197);
+    border-radius: 2px;
+    padding: 17px 23px 14px 8px;
+    background: white;
+    box-shadow: 1px 2px 2.3px 2px;
+    width: 450px;
+    color: rgb(84, 87, 255);
+    font-weight: bold;
+    margin: 120px auto 25px auto;
+}
+
+label {
+  text-align: left;
+}
+
+.login-form input {
+    width: 100%;
+    font-size: 16px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    height: 30px;
+    padding: 5px;
+}
+
+#login Button {
+    width: 80%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 16px;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    height: 40px;
+    padding: 5px;
+}
+
+#login p {
+  text-align: center;
+}

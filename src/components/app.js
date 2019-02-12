@@ -23,6 +23,14 @@ export default function App(props) {
                         <Link to="/signup-form">Sign Up</Link>
                     </button>
 
+                    <div hidden>
+                      <ul>
+                        <a><li>Reviews</li></a>
+                        <a><li>Settings</li></a>
+                        <a><li>Logout</li></a>
+                      </ul>
+                    </div>
+
                 </header>
                 <main>
 
