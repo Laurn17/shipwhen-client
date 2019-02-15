@@ -23,10 +23,13 @@ export default class LandingPage extends React.Component {
             // .replace(/[\s\W-]+/g, '-');
     }
 
-    goToBusiness(event) {
+    getBusiness(event) {
         event.preventDefault();
       // I'm going to have to make a get request to the API for this Bus name and send the user to the Bus Page or an Error Page
-        this.props.history.push(`/board/${this.slugify(this.state.text)}`);
+        this.props.dispatch(fetchBus());
+        return {
+          <BusPage />
+        }
     }
 
     render() {
@@ -38,7 +41,7 @@ export default class LandingPage extends React.Component {
                   </div>
             
                   <section id="landing-search">
-                  <form onSubmit={e => this.goToBusiness(e)}>
+                  <form onSubmit={e => this.getBusiness(e)}>
                       <input type="text" placeholder="Business Name" value={this.slugify(this.state.text)}
                           onChange={e => this.setText(e.target.value)} />
                       <button>Go to Business</button>
