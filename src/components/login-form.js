@@ -5,6 +5,9 @@ import Input from './input';
 import {login} from '../actions/auth';
 import {required, nonEmpty} from '../validators';
 import './login-form.css';
+import SignupPage from './signup-page';
+
+// ---------------- THIS IS THE FORM FOR USERS TO LOGIN --------------
 
 export class LoginForm extends React.Component {
     onSubmit(values) {
@@ -21,22 +24,25 @@ export class LoginForm extends React.Component {
             );
         }
         return (
-          <div id="login">
+        <Router>
+            <div id="login">
                 <form className="login-form" onSubmit={this.props.handleSubmit(values =>
-          this.onSubmit(values) )}>
-                
-                        <label htmlFor="username">Username</label>
-                        <br/>
-                        <Field component={Input} type="text" name="username" id="username" validate={[required, nonEmpty]} />
-                        <br/>
-                        <label htmlFor="password">Password</label>
-                        <br/>
-                        <Field component={Input} type="password" name="password" id="password" validate={[required, nonEmpty]} />
-                      <button disabled={this.props.pristine || this.props.submitting}> Log In </button>
+                    this.onSubmit(values) )}>
+                    
+                    <label htmlFor="username">Username</label>
+                    <br/>
+                    <Field component={Input} type="text" name="username" id="username" validate={[required, nonEmpty]} />
+                    
+                    <label htmlFor="password">Password</label>
+                    <br/>
+                    <Field component={Input} type="password" name="password" id="password" validate={[required, nonEmpty]} />
+                    <button disabled={this.props.pristine || this.props.submitting}> Log In </button>
                 </form>
-
-            <p>New to this? <span class="register"><Link to="/signup-form">Sign Up</Link></span></p>
-        </div>
+                <p>----------------------------- OR -------------------------------</p>
+                <p><span className="register"><Link to="/signup-page">Sign Up</Link></span></p>
+                <Route exact path="/signup-page" component={SignupPage} />
+            </div>
+        </Router>
         );
     }
 }

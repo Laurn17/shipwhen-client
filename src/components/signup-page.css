@@ -1,0 +1,40 @@
+.signup-page {
+  padding-left: 50px;
+  padding-right: 50px;
+  width: 100%;
+  height: auto;
+  background-color: rgb(238,238,238);
+  color: rgb(84, 87, 255);
+  
+}
+
+.signup-page::before, .signup-page::after {
+    display: table;
+    content: '';
+}
+
+.signup-page::after {
+    clear: both;
+}
+  
+.col-6 {
+  margin: 120px auto 0px auto;
+  width: 50%;
+  float: left;
+  padding-left: 2%;
+  padding-right: 2%;
+  padding-bottom: 30px;
+}
+
+.signup-page h1 {
+  padding-left: 30px;
+  text-align: left;
+  text-shadow: 2px 2px #ffffff;
+  font-size: 42px;
+}
+
+.signup-page h2 {
+  margin-top: 34px;
+  margin-bottom: 20px;
+  text-align: center;
+}

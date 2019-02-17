@@ -8,6 +8,7 @@ import {addReview, getBus} from '../actions';
 import './bus-page.css';
 
 export class BusPage extends React.Component {
-    componentDidMount() {
-        this.props.dispatch(getBus());
-    }
+// THIS COMPONENT WILL BE TO DISPLAY THE REVIEWS OF A BUSINESS
+
+// Need to insert the /components/add-review form
+}

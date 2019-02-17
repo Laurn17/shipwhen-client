@@ -1,0 +1,18 @@
+.login-page {
+  padding-left: 20px;
+  padding-right: 20px;
+  width: 100%;
+  margin: 60px auto 0px auto;
+  background-color: rgb(238,238,238);
+  color: rgb(84, 87, 255);
+}
+
+.login-page h1 {
+  text-align: center;
+  margin-top: 50px;
+  text-shadow: 2px 2px #ffffff;
+}
+
+.login-page p {
+text-align: center;
+}

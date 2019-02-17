@@ -1,4 +1,4 @@
-import * as actions from '../actions';
+import * as actions from '../actions/bus-reviews';
 
 const initialState = {
     busName: [1],
