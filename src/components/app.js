@@ -1,5 +1,6 @@
-import React from 'react';-form
+import React from 'react';
 import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
+import HeaderBar from './header-bar';
 import LandingPage from './landing-page';
 import {BusPage} from './bus-page';
 import LoginPage from './login-page';
@@ -15,30 +16,13 @@ export default function App(props) {
                 <div className="app">
 
                     <header>
-                        <h1>
-                            <Link to="/">shipwhen?</Link>
-                        </h1>
-                        <button>
-                            <Link to="/login-page">Log In</Link>
-                        </button>
-                        <button>
-                            <Link to="/signup-page">Sign Up</Link>
-                        </button>
-
-                        <div hidden>
-                          <ul>
-                            <a><li>Reviews</li></a>
-                            <a><li>Settings</li></a>
-                            <a><li>Logout</li></a>
-                          </ul>
-                        </div>
-
+                        <HeaderBar />
                     </header>
 
                     <main>
 
                         <Route exact path="/" component={LandingPage} />
-                       // ------------ DO I NEED TO ADD BusPage IN THIS COMPONENT??? ---------
+
                         <Route exact path="/bus-page/:busId" component={BusPage} />                        
                         <Route exact path="/login-page" component={LoginPage} />
                         <Route exact path="/signup-page" component={SignupPage} />

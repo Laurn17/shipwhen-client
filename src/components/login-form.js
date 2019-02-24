@@ -1,11 +1,10 @@
 import React from 'react';
-import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
 import {Field, reduxForm, focus} from 'redux-form';
 import Input from './input';
 import {login} from '../actions/auth';
 import {required, nonEmpty} from '../validators';
 import './login-form.css';
-import SignupPage from './signup-page';
+
 
 // ---------------- THIS IS THE FORM FOR USERS TO LOGIN --------------
 
@@ -24,7 +23,7 @@ export class LoginForm extends React.Component {
             );
         }
         return (
-        <Router>
+
             <div id="login">
                 <form className="login-form" onSubmit={this.props.handleSubmit(values =>
                     this.onSubmit(values) )}>
@@ -38,11 +37,8 @@ export class LoginForm extends React.Component {
                     <Field component={Input} type="password" name="password" id="password" validate={[required, nonEmpty]} />
                     <button disabled={this.props.pristine || this.props.submitting}> Log In </button>
                 </form>
-                <p>----------------------------- OR -------------------------------</p>
-                <p><span className="register"><Link to="/signup-page">Sign Up</Link></span></p>
-                <Route exact path="/signup-page" component={SignupPage} />
             </div>
-        </Router>
+
         );
     }
 }

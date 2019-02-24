@@ -14,7 +14,6 @@ export default class LandingPage extends React.Component {
               </div>
             
               <section id="landing-search">
-              // INSERT COMPONENTS/LANDING-FORM SO USERS CAN SEARCH BUSINESSESS
                 <LandingForm />   
               </section>
             

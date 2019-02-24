@@ -1,25 +1,33 @@
 import * as actions from '../actions/bus-reviews';
 
 const initialState = {
-    busName: [1],
+    loading: false,
+    error: null,
+    bus_name: [1],
     entities: {
       reviews: [{
           id: 2,
-          date_created: "20190115"
-          busName:
-          delivery:
-          order_date:
-          estimate_date:
-          arrive:
-          arrive_date:
+          date_created: "20190115",
+          bus_name: "Petes",
+          delivery: "Free",
+          order_date: "20190101",
+          estimate_date:"20190105",
+          arrive: true,
+          arrive_date: "20190101",
           created_by: 4
         },
         {
-          id: 3,
-          title: 'Option 11',
-          created_by: 5
+          id: 2,
+          date_created: "20190116",
+          bus_name: "Lucky",
+          delivery: "Free",
+          order_date:"20190110",
+          estimate_date:"20190115",
+          arrive: true,
+          arrive_date: "20190115",
+          created_by: 4
         }],
-      reviewCreators: {
+      review_creators: {
         4: {
           id: 4,
           username: 'thierry',
@@ -34,8 +42,14 @@ const initialState = {
 
 
 
-export const shipwhenReducer = (state=initialState, action) => {
-    if (action.type === actions.ADD_LIST) {
+export default function busReviewsReducer(state=initialState, action) {
+    if (action.type === actions.FETCH_BUS_REQUEST) {
+        return { ...state,
+                loading: true,
+                error: null
+            }
+    }
+    if (action.type === actions.FETCH_BUS_ERROR) {
         return Object.assign({}, state, {
             lists: [...state.lists, {
                 title: action.title,
@@ -43,7 +57,7 @@ export const shipwhenReducer = (state=initialState, action) => {
             }]
         });
     }
-    else if (action.type === actions.ADD_CARD) {
+    else if (action.type === actions.FETCH_BUS_SUCCESS) {
         let lists = state.lists.map((list, index) => {
             if (index !== action.listIndex) {
                 return list;

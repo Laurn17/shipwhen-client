@@ -5,21 +5,23 @@ import {normalizeResponseErrors} from './utils';
 
 
 export const FETCH_BUS_REQUEST = 'FETCH_BUS_REQUEST';
-export const fetchBusRequest = bus => ({
+export const fetchBusRequest = loading => ({
     type: FETCH_BUS_REQUEST,
-    // business
+    loading: true
 });
 
 export const FETCH_BUS_SUCCESS = 'FETCH_BUS_SUCCESS';
-export const fetchBusSuccess = bus => ({
+export const fetchBusSuccess = (reviews) => ({
     type: FETCH_BUS_SUCCESS,
-    // data
+    payload: {
+        reviews
+    }
 });
 
 export const FETCH_BUS_ERROR = 'FETCH_BUS_ERROR';
-export const fetchBusError = bus => ({
+export const fetchBusError = (error) => ({
     type: FETCH_BUS_ERROR,
-    // error
+    error
 });
 
 // ---------------- GET THE BUSINESS'S REVIEWS FROM SERVER -------------- Used in components/landing-page
@@ -27,11 +29,7 @@ export const getBus = () => dispatch => {
     dispatch(fetchBusRequest());
     return
         fetch(`${API_BASE_URL}/:busName`, {
-            method: 'GET',
-            headers: {
-            // Provide our auth token as credentials
-            Authorization: `Bearer ${authToken}`
-            }
+            method: 'GET'
         })
         .then(res => {
             if (!res.ok) {

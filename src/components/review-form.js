@@ -6,7 +6,7 @@ import {submitReview} from '../actions/bus-reviews';
 
 
 // ---------------- THIS FORM IS FOR USERS TO ADD A BUSINESS SHIPPING REVIEW -------------- Used in components/bus-page
-export class reviewForm extends React.Component {
+export class ReviewForm extends React.Component {
     onSubmit(values) {
        return this.props.dispatch(submitReview(values));
     }
@@ -77,4 +77,4 @@ export default reduxForm({
     form: 'review',
     onSubmitFail: (errors, dispatch) =>
         dispatch(focus('review', Object.keys(errors)[0]))
-})(reviewForm);
+})(ReviewForm);
