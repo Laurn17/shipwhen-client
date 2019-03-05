@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 import NoBusError from './no-bus-error.js';
 import ReviewForm from './review-form';
 
-import {addReview, getBus} from '../actions';
+import {addReview, getBus} from '../actions/bus-reviews';
 
 import './bus-page.css';
 

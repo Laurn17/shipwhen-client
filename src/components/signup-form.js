@@ -6,13 +6,13 @@ import Input from './input';
 import {required, nonEmpty, matches, length, isTrimmed} from '../validators';
 import './signup-form.css';
 
-const passwordLength = length({min: 10, max: 72});
+const passwordLength = length({min: 7, max: 72});
 const matchesPassword = matches('password');
 
 export class SignupForm extends React.Component {
     onSubmit(values) {
-        const {username, password, firstName, lastName} = values;
-        const user = {username, password, firstName, lastName};
+        const {username, password, firstName, lastName, email} = values;
+        const user = {username, password, firstName, lastName, email};
         return this.props
             .dispatch(registerUser(user))
             .then(() => this.props.dispatch(login(username, password)));
@@ -37,6 +37,8 @@ export class SignupForm extends React.Component {
                         name="username"
                         validate={[required, nonEmpty, isTrimmed]}
                     />
+                    <label htmlFor="email">Email</label>
+                    <Field component={Input} type="email" name="email" validate={[required]} />
                     <label htmlFor="password">Password</label>
                     <Field
                         component={Input}

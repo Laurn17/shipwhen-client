@@ -1,9 +1,13 @@
 import React from 'react';
+import {connect} from 'react-redux';
+import {Redirect} from 'react-router-dom';
 import SignupForm from './signup-form';
 import './signup-page.css';
 
-export default class SignUpPage extends React.Component {
-	render() {
+export function SignUpPage(props) {
+	if (props.loggedIn) {
+    return <Redirect to="/" />;
+  }
 	    return (
 	        <div className="signup-page">
             <div className="col-6">
@@ -16,5 +20,11 @@ export default class SignUpPage extends React.Component {
             </div>
 	        </div>
 	    );
-	};
+
 };
+
+const mapStateToProps = state => ({
+  loggedIn: state.auth.currentUser !== null
+});
+
+export default connect(mapStateToProps)(SignUpPage);
