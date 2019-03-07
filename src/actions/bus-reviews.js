@@ -25,10 +25,10 @@ export const fetchBusError = (error) => ({
 });
 
 // ---------------- GET THE BUSINESS'S REVIEWS FROM SERVER -------------- Used in components/landing-page
-export const getBus = () => dispatch => {
+export const getBus = (busName) => dispatch => {
     dispatch(fetchBusRequest());
     return
-        fetch(`${API_BASE_URL}/:busName`, {
+        fetch(`${API_BASE_URL}/${busName}`, {
             method: 'GET'
         })
         .then(res => {
