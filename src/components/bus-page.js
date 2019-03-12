@@ -13,7 +13,7 @@ export class BusPage extends React.Component {
 	render () {
 		const noBusInfo = this.props.busName === null;
 		return (
-			<div>
+			<div className="reviews">
 				{noBusInfo ? ( <NoBusError /> ) :
 				 ( <div>
 				 	this.props.busName
@@ -34,11 +34,14 @@ export class BusPage extends React.Component {
 }
 // busReviews is the name of the reducer in my Store
 const mapStateToProps = state => {
-    return {
-	    busName: state.busReviews.bus_name,
-	    review: state.busReviews.entities.reviews,
-	    reviewCreator: state.busReviews.entities.review_creators
-	};
+	return {
+		review: state.reviews
+	}
+ //    return {
+	//     busName: state.busReviews.bus_name,
+	//     review: state.busReviews.entities.reviews,
+	//     reviewCreator: state.busReviews.entities.review_creators
+	// };
 };
 
 export default connect(mapStateToProps)(BusPage);

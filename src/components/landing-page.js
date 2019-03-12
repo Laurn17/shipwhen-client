@@ -5,7 +5,8 @@ import LandingForm from './landing-form';
 // ------------------ THIS IS THE LANDING PAGE USERS FIRST SEE ------------------ Used in components/App
 export default class LandingPage extends React.Component {
 
-    render() {
+render() {
+
         return (
             <div className="landing-page">
                             
@@ -31,4 +32,5 @@ export default class LandingPage extends React.Component {
             </div>
         );
     };
-}
+};
+
