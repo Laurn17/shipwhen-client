@@ -46,6 +46,7 @@ export const getBus = (bus_name) => dispatch => {
         })
         .then(bus => {
             console.log("Fetch Bus Success");
+            console.log(bus);
             dispatch(fetchBusSuccess(bus));
         })
         .catch(err => {
@@ -57,7 +58,7 @@ export const getBus = (bus_name) => dispatch => {
 // ---------------- POST THE A BUSINESS REVIEW TO SERVER -------------- Used in components/add-review
 export const submitReview = (values) => dispatch => {
     return (
-        fetch(`{API_BASE_URL}/:busName`, {
+        fetch(`{API_BASE_URL}/reviews`, {
                 method: 'POST',
                 body: JSON.stringify(values),
                 headers: {

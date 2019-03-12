@@ -39,7 +39,15 @@ import * as actions from '../actions/bus-reviews';
     // }
 
 const initialState = {
-  reviews: null,
+  reviews: [{
+    bus_name: null,
+    delivery: null,
+    order_date: null,
+    estimate_date: null,
+    arrive: null,
+    arrive_date: null,
+    created_by: null
+  }],
   error: null
 };
 

@@ -1,4 +1,5 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import BusPage from './bus-page';
 import { Field, reduxForm } from 'redux-form';
 import Input from './input';
@@ -13,7 +14,9 @@ export class LandingForm extends React.Component {
   }
 
   render() {
-
+// if(busName === busStateName) {
+//   <Redirect to = "/BusPage" />
+// }
     return (
       <form onSubmit={this.props.handleSubmit(values => this.onSubmit(values))}>
 
@@ -27,18 +30,15 @@ export class LandingForm extends React.Component {
   };
 };
 
-export default reduxForm({
+// IMPORTING BUS NAME FROM STATE FOR CONDITIONAL LOGIC UNDER RENDER
+LandingForm = reduxForm({
   form: 'landing' 
 })(LandingForm);
 
-// LandingForm = reduxForm({
-//   form: 'landing' 
-// })(LandingForm);
+LandingForm = connect(
+  state => ({
+    busStateName: state.busReviews.reviews.bus_name
+  })
+)(LandingForm);
 
-// LandingForm = connect(
-//   state => ({
-//     busName: state.busReviews.reviews
-//   })
-// )(LandingForm);
-
-// export default LandingForm
+export default LandingForm
