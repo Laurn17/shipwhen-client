@@ -28,14 +28,13 @@ export const fetchBusError = (error) => ({
 export const getBus = (bus_name) => dispatch => {
     dispatch(fetchBusRequest());
     return (
-        fetch(`${API_BASE_URL}/reviews`, {
+        fetch(`${API_BASE_URL}/reviews/${bus_name}`, {
             method: 'GET',
             headers: {
                 'Authorization': 'Bearer ' + token
             },
             contentType: 'application/json',
-            dataType: 'json',
-            data: JSON.stringify(bus_name)
+            dataType: 'json'
         })
         .then(res => {
             if (!res.ok) {

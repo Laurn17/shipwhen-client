@@ -14,9 +14,11 @@ export class LandingForm extends React.Component {
   }
 
   render() {
-// if(busName === busStateName) {
-//   <Redirect to = "/BusPage" />
-// }
+    
+    // if(busName === busStateName) {
+    //   <Redirect to = "/BusPage" />
+    // }
+
     return (
       <form onSubmit={this.props.handleSubmit(values => this.onSubmit(values))}>
 
