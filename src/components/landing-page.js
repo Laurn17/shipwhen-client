@@ -1,12 +1,14 @@
 import React from 'react';
+import {connect} from 'react-redux';
 import './landing-page.css';
-import LandingForm from './landing-form';
+import SearchPage from './search-page';
 
 // ------------------ THIS IS THE LANDING PAGE USERS FIRST SEE ------------------ Used in components/App
-export default class LandingPage extends React.Component {
+export class LandingPage extends React.Component {
+
+
 
 render() {
-
         return (
             <div className="landing-page">
                             
@@ -14,8 +16,8 @@ render() {
                 <h2>Find Actual Shipping Times</h2>
               </div>
             
-              <section id="landing-search">
-                <LandingForm />   
+              <section id="search-page">
+                <SearchPage />   
               </section>
             
               <section id="landing-description">
@@ -34,3 +36,8 @@ render() {
     };
 };
 
+const mapStateToProps = state => ({
+    data: state.busReviews.reviews
+});
+
+export default connect(mapStateToProps)(LandingPage);

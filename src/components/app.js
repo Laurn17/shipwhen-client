@@ -23,7 +23,7 @@ export default function App(props) {
 
                         <Route exact path="/" component={LandingPage} />
 
-                        <Route exact path="/bus-page/:busId" component={BusPage} />                        
+                        <Route exact path="/reviews/:bus_name" component={BusPage} />                        
                         <Route exact path="/login-page" component={LoginPage} />
                         <Route exact path="/signup-page" component={SignupPage} />
 
