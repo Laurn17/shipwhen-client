@@ -9,23 +9,32 @@ import {Redirect} from 'react-router-dom';
 let name;
 // --------- THIS FORM IS FOR THE USER TO ENTER A BUS NAME TO THEN RETRIVE IT'S REVIEWS --------
 class SearchForm extends React.Component {
-
+// I WANT TO CLEAR THE STATE BEFORE AND/OR AFTER THE USER SEARCHES A BUS
+// componentWillMount(){
+//   state = undefined
+// }
+// componentDidMount() {
+//   state = undefined
+// }
 
   onSubmit(values) {
-    console.log("Searching Business");
-    this.props.dispatch(getBus(values.busName));
     const name = values.busName;
-    console.log(name);
+    console.log("Searching for Business: " + name);
+    this.props.dispatch(getBus(values.busName));
   }
-
 
   render() {
 
-// this works but I have to figure out how to clear the state or name variable so we're not stuck in this loop of constantly being re-directed
-      if (name === this.props.data) {
-       return <Redirect to ="/reviews/name" />
-      }
-
+// THIS SHOULD WORK IF I CAN FIGURE OUT HOW TO CLEAR THE STATE
+      // if (this.props.noData === true) {
+      //   return <Redirect to ="/not-found" />
+      // }
+      // if (this.props.error === "Something went wrong") {
+      //   return <Redirect to ="/not-found" />
+      // }
+      // else {
+      //   return <Redirect to ="/reviews/name" />
+      // }
 
     return (
       <form onSubmit={this.props.handleSubmit(values => this.onSubmit(values))}>
@@ -44,7 +53,9 @@ class SearchForm extends React.Component {
 // IMPORTING BUS NAME FROM STATE FOR CONDITIONAL LOGIC UNDER RENDER
 const mapStateToProps = state => {
   return {
-    data: state.busReviews.reviews.bus_name
+    data: state.busReviews.reviews.bus_name,
+    noData: state.busReviews.noData,
+    error: state.busReviews.error
   }
 }
 

@@ -1,3 +1,4 @@
+
 import * as actions from '../actions/bus-reviews';
 
     // loading: false,
@@ -48,7 +49,8 @@ const initialState = {
     arrive_date: null,
     created_by: null
   }],
-  error: null
+  error: null,
+  noData: null
 };
 
 
@@ -62,8 +64,16 @@ export default function busReviewsReducer(state=initialState, action) {
     }
     if (action.type === actions.FETCH_BUS_ERROR) {
         return Object.assign({}, state, {
-
-        });
+            reviews: [null],
+            error: action.error
+        })
+    }
+    if (action.type === actions.FETCH_BUS_NODATA) {
+        return Object.assign({}, state, {
+            reviews: [null],
+            error: null,
+            noData: action.noData
+        })
     }
     else if (action.type === actions.FETCH_BUS_SUCCESS) {
         return Object.assign({}, state, {

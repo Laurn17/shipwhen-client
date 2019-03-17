@@ -21,7 +21,14 @@ export const fetchBusSuccess = (reviews) => ({
 export const FETCH_BUS_ERROR = 'FETCH_BUS_ERROR';
 export const fetchBusError = (error) => ({
     type: FETCH_BUS_ERROR,
-    error
+    error: "Something went wrong"
+});
+
+// TRYING TO HANDLE SERVER RESPONSE THAT IS EMPTY
+export const FETCH_BUS_NODATA = 'FETCH_BUS_NODATA';
+export const fetchBusNoData = noData => ({
+    type: FETCH_BUS_NODATA,
+    noData: true
 });
 
 // ---------------- GET THE BUSINESS'S REVIEWS FROM SERVER -------------- Used in components/landing-page
@@ -37,14 +44,18 @@ export const getBus = (bus_name) => dispatch => {
             dataType: 'json'
         })
         .then(res => {
-            if (!res.ok) {
-                console.log("Rejected Fetch Bus");
-                return Promise.reject(res.statusText);
-            }
             return res.json();
         })
+        .then(res => {
+            if (res.length === 0) {
+                console.log("No Business Found");
+                dispatch(fetchBusNoData())
+                .then(err => Promise.reject(err));
+            }
+            return res
+        })
         .then(bus => {
-            console.log("Fetch Bus Success");
+            console.log("Found Business Successfully");
             console.log(bus);
             dispatch(fetchBusSuccess(bus));
         })

@@ -22,7 +22,6 @@ export default function App(props) {
                     <main>
 
                         <Route exact path="/" component={LandingPage} />
-
                         <Route exact path="/reviews/:bus_name" component={BusPage} />                        
                         <Route exact path="/login-page" component={LoginPage} />
                         <Route exact path="/signup-page" component={SignupPage} />
