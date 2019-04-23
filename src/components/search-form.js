@@ -9,13 +9,8 @@ import {Redirect} from 'react-router-dom';
 let name;
 // --------- THIS FORM IS FOR THE USER TO ENTER A BUS NAME TO THEN RETRIVE IT'S REVIEWS --------
 class SearchForm extends React.Component {
-// I WANT TO CLEAR THE STATE BEFORE AND/OR AFTER THE USER SEARCHES A BUS
-// componentWillMount(){
-//   state = undefined
-// }
-// componentDidMount() {
-//   state = undefined
-// }
+  // HOW DO I ROUTE THE USER TO BUS-PAGE AFTER SEARH PERFORMS??
+// DO I NEED TO CLEAR THE STATE BEFORE AND/OR AFTER THE USER SEARCHES A BUS??
 
   onSubmit(values) {
     const name = values.busName;
@@ -25,7 +20,7 @@ class SearchForm extends React.Component {
 
   render() {
 
-// THIS SHOULD WORK IF I CAN FIGURE OUT HOW TO CLEAR THE STATE
+// THIS SHOULD WORK IF I CAN FIGURE OUT HOW TO CLEAR THE STATE           
       // if (this.props.noData === true) {
       //   return <Redirect to ="/not-found" />
       // }
