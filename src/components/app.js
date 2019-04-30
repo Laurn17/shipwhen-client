@@ -1,5 +1,6 @@
 import React from 'react';
-import {BrowserRouter as Router, Route} from 'react-router-dom';
+import { Router, Route, Link } from 'react-router-dom';
+import history from './history';
 import HeaderBar from './header-bar';
 import LandingPage from './landing-page';
 import {BusPage} from './bus-page';
@@ -12,7 +13,7 @@ import './app.css';
 export default function App(props) {
 
         return (
-            <Router>
+            <Router history={history}>
                 <div className="app">
 
                     <header>
@@ -20,7 +21,6 @@ export default function App(props) {
                     </header>
 
                     <main>
-
                         <Route exact path="/" component={LandingPage} />
                         <Route exact path="/reviews/:bus_name" component={BusPage} />                        
                         <Route exact path="/login-page" component={LoginPage} />

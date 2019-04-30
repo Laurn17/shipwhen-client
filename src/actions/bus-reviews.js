@@ -1,7 +1,7 @@
 import {API_BASE_URL} from '../config';
 import {SubmissionError} from 'redux-form';
 import {normalizeResponseErrors} from './utils';
-import { BusPage } from '../components/bus-page';
+import history from '../components/history';
 
 const token = localStorage.getItem('authToken');
 
@@ -32,7 +32,7 @@ export const fetchBusNoData = noData => ({
 });
 
 // ---------------- GET THE BUSINESS'S REVIEWS FROM SERVER -------------- Used in components/landing-page
-export const getBus = (bus_name) => dispatch => {
+export const getBus = (bus_name, history) => dispatch => {
     dispatch(fetchBusRequest());
     return (
         fetch(`${API_BASE_URL}/reviews/${bus_name}`, {
@@ -57,7 +57,8 @@ export const getBus = (bus_name) => dispatch => {
         .then(bus => {
             console.log("Found Business Successfully");
             console.log(bus);
-            dispatch(fetchBusSuccess(bus));
+            dispatch(fetchBusSuccess(bus))
+            history.push(`/reviews/${bus_name}`);
         })
         .catch(err => {
              dispatch(fetchBusError());

@@ -1,12 +1,13 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { BusPage } from './bus-page';
-import { Field, reduxForm, formValueSelector } from 'redux-form';
+// import { BusPage } from './bus-page';
+import { Field, reduxForm} from 'redux-form';
 import Input from './input';
 import {getBus} from '../actions/bus-reviews';
-import {Redirect} from 'react-router-dom'; 
+// import {Redirect} from 'react-router-dom'; 
+// import { browserHistory } from 'react-router'; // importing from 'react-router'
 
-let name;
+// let name;
 // --------- THIS FORM IS FOR THE USER TO ENTER A BUS NAME TO THEN RETRIVE IT'S REVIEWS --------
 class SearchForm extends React.Component {
   // HOW DO I ROUTE THE USER TO BUS-PAGE AFTER SEARH PERFORMS??
@@ -16,6 +17,7 @@ class SearchForm extends React.Component {
     const name = values.busName;
     console.log("Searching for Business: " + name);
     this.props.dispatch(getBus(values.busName));
+    // browserHistory.push('/reviews/${values}');
   }
 
   render() {
