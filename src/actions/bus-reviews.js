@@ -32,7 +32,8 @@ export const fetchBusNoData = noData => ({
 });
 
 // ---------------- GET THE BUSINESS'S REVIEWS FROM SERVER -------------- Used in components/landing-page
-export const getBus = (bus_name, history) => dispatch => {
+export const getBus = (bus_name) => dispatch => {
+    console.log(history);
     dispatch(fetchBusRequest());
     return (
         fetch(`${API_BASE_URL}/reviews/${bus_name}`, {
@@ -50,7 +51,8 @@ export const getBus = (bus_name, history) => dispatch => {
             if (res.length === 0) {
                 console.log("No Business Found");
                 dispatch(fetchBusNoData())
-                .then(err => Promise.reject(err));
+                history.push("/no-business")
+                .then(err => Promise.reject());
             }
             return res
         })
@@ -69,7 +71,7 @@ export const getBus = (bus_name, history) => dispatch => {
 // ---------------- POST THE A BUSINESS REVIEW TO SERVER -------------- Used in components/add-review
 export const submitReview = (values) => dispatch => {
     return (
-        fetch(`{API_BASE_URL}/reviews`, {
+        fetch(`${API_BASE_URL}/reviews`, {
                 method: 'POST',
                 body: JSON.stringify(values),
                 headers: {

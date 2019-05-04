@@ -4,6 +4,7 @@ import history from './history';
 import HeaderBar from './header-bar';
 import LandingPage from './landing-page';
 import {BusPage} from './bus-page';
+import {NoBusError} from './no-bus-error';
 import LoginPage from './login-page';
 import SignupPage from './signup-page';
 
@@ -22,10 +23,10 @@ export default function App(props) {
 
                     <main>
                         <Route exact path="/" component={LandingPage} />
-                        <Route exact path="/reviews/:bus_name" component={BusPage} />                        
+                        <Route exact path="/reviews/:bus_name" component={BusPage} />
+                        <Route exact path="/no-business" component={NoBusError} />                        
                         <Route exact path="/login-page" component={LoginPage} />
                         <Route exact path="/signup-page" component={SignupPage} />
-
                     </main>
                 </div>
             </Router>

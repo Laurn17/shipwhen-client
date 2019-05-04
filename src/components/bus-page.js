@@ -11,11 +11,9 @@ export class BusPage extends React.Component {
 // THIS COMPONENT WILL BE TO DISPLAY THE REVIEWS OF A BUSINESS
 
 	render () {
-		const noBusInfo = this.props.busName === null;
 		return (
 			<div className="reviews">
-				{noBusInfo ? ( <NoBusError /> ) :
-				 ( <div>
+				<div>
 				 	this.props.busName
 					this.props.review.date_created
 					this.props.review.bus_name
@@ -25,8 +23,7 @@ export class BusPage extends React.Component {
 					this.props.review.arrive
 					this.props.review.arrive_date
 					this.props.review.created_by 
-				 </div> )
-				} 
+				</div>
 			</div>
 		)
 	// Need to insert the /components/add-review form
@@ -37,11 +34,6 @@ const mapStateToProps = state => {
 	return {
 		review: state.reviews
 	}
- //    return {
-	//     busName: state.busReviews.bus_name,
-	//     review: state.busReviews.entities.reviews,
-	//     reviewCreator: state.busReviews.entities.review_creators
-	// };
 };
 
 export default connect(mapStateToProps)(BusPage);
