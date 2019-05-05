@@ -15,25 +15,28 @@ export const fetchBusRequest = loading => ({
 export const FETCH_BUS_SUCCESS = 'FETCH_BUS_SUCCESS';
 export const fetchBusSuccess = (reviews) => ({
     type: FETCH_BUS_SUCCESS,
+    loading: false,
     reviews
 });
 
 export const FETCH_BUS_ERROR = 'FETCH_BUS_ERROR';
 export const fetchBusError = (error) => ({
     type: FETCH_BUS_ERROR,
+    loading: false,
     error: "Something went wrong"
 });
 
 // TRYING TO HANDLE SERVER RESPONSE THAT IS EMPTY
 export const FETCH_BUS_NODATA = 'FETCH_BUS_NODATA';
-export const fetchBusNoData = noData => ({
+export const fetchBusNoData = (bus_name) => ({
     type: FETCH_BUS_NODATA,
-    noData: true
+    loading: false,
+    noData: true,
+    bus_name
 });
 
 // ---------------- GET THE BUSINESS'S REVIEWS FROM SERVER -------------- Used in components/landing-page
 export const getBus = (bus_name) => dispatch => {
-    console.log(history);
     dispatch(fetchBusRequest());
     return (
         fetch(`${API_BASE_URL}/reviews/${bus_name}`, {
@@ -50,7 +53,7 @@ export const getBus = (bus_name) => dispatch => {
         .then(res => {
             if (res.length === 0) {
                 console.log("No Business Found");
-                dispatch(fetchBusNoData())
+                dispatch(fetchBusNoData(`${bus_name}`))
                 history.push("/no-business")
                 .then(err => Promise.reject());
             }

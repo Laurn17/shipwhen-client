@@ -34,7 +34,6 @@ class SearchForm extends React.Component {
 // IMPORTING BUS NAME FROM STATE FOR CONDITIONAL LOGIC UNDER RENDER
 const mapStateToProps = state => {
   return {
-    data: state.busReviews.reviews.bus_name,
     noData: state.busReviews.noData,
     error: state.busReviews.error
   }

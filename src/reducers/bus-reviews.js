@@ -4,7 +4,6 @@ import * as actions from '../actions/bus-reviews';
     // loading: false,
     // error: null,
     // bus_name: [1],
-    // entities: {
     //   reviews: [{
     //       id: 2,
     //       date_created: "20190115",
@@ -36,11 +35,12 @@ import * as actions from '../actions/bus-reviews';
     //       id: 5,
     //       username: 'dennis'
     //     }
-    //   }
     // }
 
 const initialState = {
+  bus_name: null,
   reviews: [{
+    id: null,
     bus_name: null,
     delivery: null,
     order_date: null,
@@ -50,7 +50,8 @@ const initialState = {
     created_by: null
   }],
   error: null,
-  noData: null
+  noData: null,
+  loading: null
 };
 
 
@@ -70,14 +71,15 @@ export default function busReviewsReducer(state=initialState, action) {
     }
     if (action.type === actions.FETCH_BUS_NODATA) {
         return Object.assign({}, state, {
-            reviews: [null],
-            error: null,
+            bus_name: action.bus_name,
+            loading: action.loading,
             noData: action.noData
         })
     }
     else if (action.type === actions.FETCH_BUS_SUCCESS) {
         return Object.assign({}, state, {
-            reviews: action.reviews
+            reviews: action.reviews,
+            loading: action.loading
         })
     }
     return state;
