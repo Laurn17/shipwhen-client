@@ -1,12 +1,9 @@
 import React from 'react';
-import {connect} from 'react-redux';
+import { connect } from 'react-redux';
 import ReviewFormPage from './review-form-page';
 import './no-bus-error.css';
 
-export class NoBusError extends React.Component {
-	
-
-
+class NoBusError extends React.Component {
 	render() {
 		return (
 			<div className="noBus-content">
@@ -18,16 +15,15 @@ export class NoBusError extends React.Component {
 					< ReviewFormPage />
 				</section>
       		</div>
-		)
+		);
 	}
 }
 
 // I CAN'T SEEM TO PULL IN THE STATE. THERE IS UPDATED STATE, I CHECKED IN REACT DEV TOOLS AND I CAN SEE IT.
-// ONCE I GET THE PROPER STATE, I CAN CHECK THAT LINE 13 IS RIGHT
-const mapStateToProps = (state) => {
+const mapStateToProps = state => {
 	return {
 		busName: state.busReviews.bus_name
-	}
+	};
 };
 
 export default connect(mapStateToProps)(NoBusError);

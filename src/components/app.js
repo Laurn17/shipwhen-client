@@ -3,8 +3,8 @@ import { Router, Route, Link } from 'react-router-dom';
 import history from './history';
 import HeaderBar from './header-bar';
 import LandingPage from './landing-page';
-import {BusPage} from './bus-page';
-import {NoBusError} from './no-bus-error';
+import BusPage from './bus-page';
+import NoBusError from './no-bus-error';
 import LoginPage from './login-page';
 import SignupPage from './signup-page';
 
