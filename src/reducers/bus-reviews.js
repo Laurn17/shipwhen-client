@@ -41,6 +41,7 @@ const initialState = {
   bus_name: null,
   reviews: [{
     id: null,
+    date_created: null,
     bus_name: null,
     delivery: null,
     order_date: null,

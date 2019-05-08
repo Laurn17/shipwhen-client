@@ -1,5 +1,5 @@
 import React from 'react';
-import {connect} from 'react-redux';
+import { connect } from 'react-redux';
 import Review from './review';
 import ReviewFormPage from './review-form-page';
 import {submitReview} from '../actions/bus-reviews';
@@ -13,8 +13,11 @@ class BusPage extends React.Component {
  //    }
 
 	render () {
+console.log(this.props.arrive);
+		 
 		return (
 			<div className="reviews1">
+			console.log(this.props.bus_name)
 			<h1>Reviews For {this.props.bus_name}</h1>
 				<div>
 					<p>{this.props.date_created}</p>
@@ -39,12 +42,12 @@ const mapStateToProps = state => {
 	return {
 		date_created: state.busReviews.reviews[0].date_created,
 		bus_name: state.busReviews.reviews[0].bus_name,
-		delivery: state.busReviews.reviews.delivery,
-		order_date: state.busReviews.reviews.order_date,
-		estimate_date: state.busReviews.reviews.estimate_date,
-		arrive: state.busReviews.reviews.arrive,
-		arrive_date: state.busReviews.reviews.arrive_date,
-		created_by: state.busReviews.reviews.created_by
+		delivery: state.busReviews.reviews[0].delivery,
+		order_date: state.busReviews.reviews[0].order_date,
+		estimate_date: state.busReviews.reviews[0].estimate_date,
+		arrive: state.busReviews.reviews[0].arrive,
+		arrive_date: state.busReviews.reviews[0].arrive_date,
+		created_by: state.busReviews.reviews[0].created_by
 	}
 };
 

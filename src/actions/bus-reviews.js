@@ -16,6 +16,7 @@ export const FETCH_BUS_SUCCESS = 'FETCH_BUS_SUCCESS';
 export const fetchBusSuccess = (reviews) => ({
     type: FETCH_BUS_SUCCESS,
     loading: false,
+    noData: false,
     reviews
 });
 
