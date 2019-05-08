@@ -19,15 +19,17 @@ console.log(this.props.arrive);
 			<div className="reviews1">
 			console.log(this.props.bus_name)
 			<h1>Reviews For {this.props.bus_name}</h1>
-				<div>
-					<p>{this.props.date_created}</p>
+				<div className="indivReview">
+					<div className="revDetails">
+						<p>{this.props.date_created}</p>
+						<p>{this.props.created_by}</p>
+					</div>
 					<p>{this.props.bus_name}</p>
-					<p>{this.props.delivery}</p>
-					<p>{this.props.order_date}</p>
-					<p>{this.props.estimate_date}</p>
-					<p>{this.props.arrive}</p>
-					<p>{this.props.arrive_date}</p>
-					<p>{this.props.created_by}</p>
+					<p>Delivery Type: {this.props.delivery}</p>
+					<p>Ordered On: {this.props.order_date}</p>
+					<p>Estimated to Arrive: {this.props.estimate_date}</p>
+					<p>Package Arrived: {this.props.arrive}</p>
+					<p>Arrival Date: {this.props.arrive_date}</p>
 				</div>
 
 				<section id="review-page">
@@ -45,7 +47,7 @@ const mapStateToProps = state => {
 		delivery: state.busReviews.reviews[0].delivery,
 		order_date: state.busReviews.reviews[0].order_date,
 		estimate_date: state.busReviews.reviews[0].estimate_date,
-		arrive: state.busReviews.reviews[0].arrive,
+		arrive: state.busReviews.reviews[0].arrive.toString(),
 		arrive_date: state.busReviews.reviews[0].arrive_date,
 		created_by: state.busReviews.reviews[0].created_by
 	}
