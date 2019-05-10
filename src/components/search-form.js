@@ -13,6 +13,7 @@ class SearchForm extends React.Component {
     const name = values.busName;
     console.log("Searching for Business: " + name);
     this.props.dispatch(getBus(values.busName));
+    // history.push('/reviews/${name}')  Can delete line 15 since I will be dispatching in my BusPage
 
   }
 
