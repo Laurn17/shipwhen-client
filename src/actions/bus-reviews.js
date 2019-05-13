@@ -80,7 +80,8 @@ export const submitReview = (values) => dispatch => {
                 body: JSON.stringify(values),
                 headers: {
                     'Content-Type': 'application/json'
-                }
+                },
+                dataType: 'json'
             })
                 .then(res => {
                     if (!res.ok) {
