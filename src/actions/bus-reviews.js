@@ -1,3 +1,4 @@
+
 import {API_BASE_URL} from '../config';
 import {SubmissionError} from 'redux-form';
 import {normalizeResponseErrors} from './utils';
@@ -80,8 +81,12 @@ export const submitReview = (values) => dispatch => {
                 body: JSON.stringify(values),
                 headers: {
                     'Content-Type': 'application/json'
-                }
+                },
+                dataType: 'json'
             })
+            .then(res => {
+                return res.json();
+             })
                 .then(res => {
                     if (!res.ok) {
                         if (
@@ -101,7 +106,9 @@ export const submitReview = (values) => dispatch => {
                     }
                     return;
                 })
-                .then(() => console.log('Submitted with values', values))
+                .then(res => {
+                    console.log(res);
+                })
                 .catch(err => {
                     const {reason, message, location} = err;
                     if (reason === 'ValidationError') {

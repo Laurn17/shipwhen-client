@@ -1,6 +1,5 @@
 import React from 'react';
 import { connect } from 'react-redux';
-// import { BusPage } from './bus-page';
 import { Field, reduxForm} from 'redux-form';
 import Input from './input';
 import {getBus} from '../actions/bus-reviews';
