@@ -73,17 +73,20 @@ export const getBus = (bus_name) => dispatch => {
 };
 
 // ---------------- POST THE A BUSINESS REVIEW TO SERVER -------------- Used in components/add-review
-export const submitReview = (values) => dispatch => {
+export const submitReview = (values, user) => dispatch => {
     return (
         fetch(`${API_BASE_URL}/reviews`, {
                 method: 'POST',
-                body: JSON.stringify(values),
+                body: JSON.stringify(values, user),
                 headers: {
                     'Content-Type': 'application/json'
                 },
                 dataType: 'json'
             })
-                .then(res => {
+            .then(res => {
+                return res.json();
+            })
+                    .then(res => {
                     if (!res.ok) {
                         if (
                             res.headers.has('content-type') &&
@@ -102,7 +105,9 @@ export const submitReview = (values) => dispatch => {
                     }
                     return;
                 })
-                .then(() => console.log('Submitted with values', values))
+                .then(res => {
+                    console.log(res);
+                })
                 .catch(err => {
                     const {reason, message, location} = err;
                     if (reason === 'ValidationError') {

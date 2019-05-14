@@ -11,9 +11,10 @@ import { connect } from 'react-redux';
 
 // ---------------- THIS FORM IS FOR USERS TO ADD A BUSINESS SHIPPING REVIEW -------------- Used in components/bus-page
 class AddReviewForm extends React.Component {
-    onSubmit(values) {
+    onSubmit(values, user) {
         console.log("submitting review form");
-      return this.props.dispatch(submitReview(values));
+        console.log(user);
+      return this.props.dispatch(submitReview(values, user));
     }
 
     render() {
@@ -26,12 +27,11 @@ class AddReviewForm extends React.Component {
         //     );
         // }
         const user = this.props.created_by.username;
-        console.log(user);
 
         return (
             <div id="review">
 
-                <form className="review-form" onSubmit={this.props.handleSubmit(values => this.onSubmit(values))}>
+                <form className="review-form" onSubmit={this.props.handleSubmit(values => this.onSubmit(values, user))}>
 
                     <label htmlFor="bus_name">Business Name</label>
                     <Field component={Input} type="text" name="bus_name" validate={[required, nonEmpty]} />
@@ -56,9 +56,6 @@ class AddReviewForm extends React.Component {
 
                     <label htmlFor="arrive_date">Arrival Date</label>
                     <Field component={Input} type="Date" name="arrive_date" />
-
-                    // <label hidden htmlFor="created_by"></label>
-                    // <Field component={Input} value={user} type="text" name="created_by" />
 
                     <button type="submit" disabled={this.props.pristine || this.props.submitting}>
                         Submit
