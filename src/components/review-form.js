@@ -4,6 +4,7 @@ import Input from './input';
 import Select from './select';
 import {required, nonEmpty, matches, length, isTrimmed} from '../validators';
 import {submitReview} from '../actions/bus-reviews';
+import { connect } from 'react-redux';
 
 // import './review-form.css';
 
@@ -53,6 +54,9 @@ export class AddReviewForm extends React.Component {
 
                     <label htmlFor="arrive_date">Arrival Date</label>
                     <Field component={Input} type="Date" name="arrive_date" />
+
+                    // <label hidden htmlFor="created_by"></label>
+                    // <Field component={Input} value={this.props.created_by} type="text" name="created_by" />
 
                     <button type="submit" disabled={this.props.pristine || this.props.submitting}>
                         Submit
