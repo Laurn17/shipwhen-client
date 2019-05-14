@@ -10,7 +10,7 @@ import { connect } from 'react-redux';
 
 
 // ---------------- THIS FORM IS FOR USERS TO ADD A BUSINESS SHIPPING REVIEW -------------- Used in components/bus-page
-export class AddReviewForm extends React.Component {
+class AddReviewForm extends React.Component {
     onSubmit(values) {
         console.log("submitting review form");
       return this.props.dispatch(submitReview(values));
@@ -25,6 +25,8 @@ export class AddReviewForm extends React.Component {
         //         </div>
         //     );
         // }
+        const user = this.props.created_by.username;
+        console.log(user);
 
         return (
             <div id="review">
@@ -56,7 +58,7 @@ export class AddReviewForm extends React.Component {
                     <Field component={Input} type="Date" name="arrive_date" />
 
                     // <label hidden htmlFor="created_by"></label>
-                    // <Field component={Input} value={this.props.created_by} type="text" name="created_by" />
+                    // <Field component={Input} value={user} type="text" name="created_by" />
 
                     <button type="submit" disabled={this.props.pristine || this.props.submitting}>
                         Submit
@@ -67,8 +69,17 @@ export class AddReviewForm extends React.Component {
     };
 };
 
+const mapStateToProps = state => {
+  return {
+    created_by: state.auth.currentUser
+  }
+}
+
+AddReviewForm = connect(
+  mapStateToProps
+)(AddReviewForm);
+
+
 export default reduxForm({
-    form: 'review',
-    onSubmitFail: (errors, dispatch) =>
-        dispatch(focus('review', Object.keys(errors)[0]))
+  form: 'review' 
 })(AddReviewForm);

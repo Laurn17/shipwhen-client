@@ -17,6 +17,7 @@ class BusPage extends React.Component {
 // }
 
 	render() {
+
 	        const reviews = this.props.reviews.map((review, index) => (
 	            <li className="review-wrapper" key={index}>
 	                <Review index={index} {...review} />
@@ -39,7 +40,8 @@ class BusPage extends React.Component {
 
 const mapStateToProps = state => ({
     reviews: state.busReviews.reviews,
-    busName: state.busReviews.reviews[0].bus_name
+    busName: state.busReviews.reviews[0].bus_name,
+    created_by: state.auth.currentUser
 });
 
 export default connect(mapStateToProps)(BusPage);

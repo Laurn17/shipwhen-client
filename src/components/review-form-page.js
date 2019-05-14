@@ -8,6 +8,7 @@ export class ReviewFormPage extends React.Component {
 
 
   render() {
+
     return (
         <div className="review-form">
             <AddReviewForm/>  
@@ -17,7 +18,7 @@ export class ReviewFormPage extends React.Component {
 };
 
 const mapStateToProps = state => ({
-    // data: state.busReviews.reviews
+    created_by: state.auth.currentUser
 });
 
 export default connect(mapStateToProps)(ReviewFormPage);
