@@ -17,11 +17,6 @@ class AddReviewForm extends React.Component {
       return this.props.dispatch(submitReview(values, user));
     }
 
-    // componentDidMount() {
-    //     const user = this.props.created_by.username;;
-    //     console.log(user);
-    // }
-
     render() {
         // let successMessage;
         // if (this.props.submitSucceeded) {
