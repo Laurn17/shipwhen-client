@@ -1,3 +1,4 @@
+
 import {API_BASE_URL} from '../config';
 import {SubmissionError} from 'redux-form';
 import {normalizeResponseErrors} from './utils';
@@ -74,10 +75,11 @@ export const getBus = (bus_name) => dispatch => {
 
 // ---------------- POST THE A BUSINESS REVIEW TO SERVER -------------- Used in components/add-review
 export const submitReview = (values, user) => dispatch => {
+    values.user = user;
     return (
         fetch(`${API_BASE_URL}/reviews`, {
                 method: 'POST',
-                body: JSON.stringify(values, user),
+                body: JSON.stringify(values),
                 headers: {
                     'Content-Type': 'application/json'
                 },
@@ -86,7 +88,8 @@ export const submitReview = (values, user) => dispatch => {
             .then(res => {
                 return res.json();
             })
-                    .then(res => {
+
+            .then(res => {
                     if (!res.ok) {
                         if (
                             res.headers.has('content-type') &&

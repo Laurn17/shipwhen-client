@@ -39,17 +39,7 @@ import * as actions from '../actions/bus-reviews';
 
 const initialState = {
   bus_name: null,
-  reviews: [{
-    id: null,
-    date_created: null,
-    bus_name: null,
-    delivery: null,
-    order_date: null,
-    estimate_date: null,
-    arrive: null,
-    arrive_date: null,
-    created_by: null
-  }],
+  reviews: [],
   error: null,
   noData: null,
   loading: null
@@ -85,3 +75,15 @@ export default function busReviewsReducer(state=initialState, action) {
     }
     return state;
 };
+
+// {
+//     id: null,
+//     date_created: null,
+//     bus_name: null,
+//     delivery: null,
+//     order_date: null,
+//     estimate_date: null,
+//     arrive: null,
+//     arrive_date: null,
+//     created_by: null
+//   }
