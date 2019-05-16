@@ -11,7 +11,7 @@ class NoBusError extends React.Component {
 	        	<img src="no-data" alt="" />
 	        	<h2>No shipping reviews found.</h2>
 	        	<p>Click the "plus" icon below to submit a review and help out the community.</p>
-	        	<section id="review-page" hidden>
+	        	<section id="review-page">
 					< ReviewFormPage />
 				</section>
       		</div>

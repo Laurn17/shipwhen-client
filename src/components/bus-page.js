@@ -8,10 +8,6 @@ import {getBus} from '../actions/bus-reviews';
 import './bus-page.css';
 
 class BusPage extends React.Component {
-// THIS COMPONENT WILL BE TO DISPLAY THE REVIEWS OF A BUSINESS
-	// submitReview(title) {
- //        this.props.dispatch(submitReview(title));
- //    }
 
 	componentDidMount() {
 		const bus = this.props.match.params.bus_name;
@@ -34,12 +30,12 @@ class BusPage extends React.Component {
 	                    {reviews}
 	                </ul>
 	                <section id="review-page">
-	                	{ this.props.created_by && < ReviewFormPage /> }			
+	                	< ReviewFormPage />			
 					</section>
 	            </div>
 	        );
-	    };
 	};
+};
 
 const mapStateToProps = state => ({
     reviews: state.busReviews.reviews,
