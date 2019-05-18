@@ -1,5 +1,5 @@
 body {
-  box-sizing: border-box;
+    box-sizing: border-box;
 
 }
 
@@ -18,7 +18,7 @@ body {
 }
 
 label {
-  text-align: left;
+    text-align: left;
 }
 
 .login-form input {
@@ -45,9 +45,9 @@ label {
 }
 
 #login p {
-  text-align: center;
+    text-align: center;
 }
 
 #login span a {
-text-decoration: none;
+    text-decoration: none;
 }

@@ -9,14 +9,14 @@ export function LoginPage(props) {
 	if (props.loggedIn) {
    		return <Redirect to="/" />;
     }
-	    return (
-	        <div className="login-page">
-	            <h1>Welcome.</h1>
-	            <p><b> Leaving a Shipping Time Review Helps Users Like You! </b></p>
-	            <LoginForm /> 
-	        </div>
-	    );
-
+    
+	return (
+	    <div className="login-page">
+	        <h1>Welcome.</h1>
+	        <p><b> Leaving a Shipping Time Review Helps Users Like You! </b></p>
+	        <LoginForm /> 
+	    </div>
+	);
 };
 
 const mapStateToProps = state => ({

@@ -5,9 +5,7 @@ import {loadAuthToken} from './local-storage';
 import authReducer from './reducers/auth';
 import protectedDataReducer from './reducers/protected-data';
 import {setAuthToken, refreshAuthToken} from './actions/auth';
-
 import busReviewsReducer from './reducers/bus-reviews';
-import settingsReducer from './reducers/settings';
 
 
 const store = createStore(
@@ -15,8 +13,7 @@ const store = createStore(
         form: formReducer,
         auth: authReducer,
         protectedData: protectedDataReducer,
-        busReviews: busReviewsReducer,
-        settings: settingsReducer
+        busReviews: busReviewsReducer
     }),
     applyMiddleware(thunk)
 );

@@ -6,11 +6,11 @@
 }
 
 .search-form input {
-    width: 60%;
-    font-size: 16px;
-    margin: 0px auto 15px auto;
-    border-radius: 5px;
-    height: 36px;
-    padding: 5px;
-    color: grey;
+  width: 60%;
+  font-size: 16px;
+  margin: 0px auto 15px auto;
+  border-radius: 5px;
+  height: 36px;
+  padding: 5px;
+  color: grey;
 }

@@ -1,5 +1,6 @@
 import React from 'react';
 
+// THIS PAGE IS USED IN REVIEW-FORM.JS
 export const Select = props => {
   const renderSelectOptions = (key, index) => {
     return (

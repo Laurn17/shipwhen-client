@@ -9,12 +9,12 @@
 }
 
 .signup-page::before, .signup-page::after {
-    display: table;
-    content: '';
+  display: table;
+  content: '';
 }
 
 .signup-page::after {
-    clear: both;
+  clear: both;
 }
   
 .col-6 {

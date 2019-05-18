@@ -1,5 +1,6 @@
 import React from 'react';
 
+// THIS PAGE IS USED IN REVIEW-FORM.JS
 export default class Input extends React.Component {
     componentDidUpdate(prevProps) {
         if (!prevProps.meta.active && this.props.meta.active) {
@@ -35,5 +36,5 @@ export default class Input extends React.Component {
                 />
             </div>
         );
-    }
-}
+    };
+};

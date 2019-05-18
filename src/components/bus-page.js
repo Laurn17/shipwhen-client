@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import Review from './review';
-import ReviewFormPage from './review-form-page';
+import ReviewTogglePage from './review-toggle-page';
 import {submitReview} from '../actions/bus-reviews';
 import {getBus} from '../actions/bus-reviews';
 
@@ -16,24 +16,23 @@ class BusPage extends React.Component {
 	}
 
 	render() {
-			console.log(this.props.reviews.map);
-	        const reviews = this.props.reviews.map((review, index) => (
-	            <li className="review-wrapper" key={index}>
-	                <Review index={index} {...review} />
-	            </li>
-	        ));
+	    const reviews = this.props.reviews.map((review, index) => (
+	        <li className="review-wrapper" key={index}>
+	            <Review index={index} {...review} />
+	        </li>
+	    ));
 
-	        return (
-	            <div className="busPage">
-	                <h1>Reviews For {this.props.match.params.bus_name}</h1>
-	                <ul className="reviews1">
-	                    {reviews}
-	                </ul>
-	                <section id="review-page">
-	                	< ReviewFormPage />			
-					</section>
-	            </div>
-	        );
+	    return (
+	        <div className="busPage">
+	            <h1>Reviews For {this.props.match.params.bus_name}</h1>
+	            <ul className="reviews1">
+	                {reviews}
+	            </ul>
+	            <section id="review-page">
+	                < ReviewTogglePage />			
+				</section>
+	        </div>
+	    );
 	};
 };
 

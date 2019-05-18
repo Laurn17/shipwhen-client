@@ -11,28 +11,26 @@ export class HeaderBar extends React.Component {
     }
 
     render() {
-        // Only render the log out button if we are logged in
         let userIcon;
         if (this.props.loggedIn) {
             userIcon = 
               <div>
                 <button>Reviews</button>
-                <button>Settings</button>
                 <button onClick={() => this.logOut()}>Log out</button>
               </div>
         }
       
         let loginSignup;
         if (this.props.loggedIn === false) {
-        loginSignup =
-              <div>
-                <button>
-                  <Link to="/login-page">Log In</Link>
-                </button>
-                <button>
-                  <Link to="/signup-page">Sign Up</Link>
-                </button>
-              </div>
+            loginSignup =
+                <div>
+                    <button>
+                        <Link to="/login-page">Log In</Link>
+                    </button>
+                    <button>
+                        <Link to="/signup-page">Sign Up</Link>
+                    </button>
+                </div>
         }
 
         return (
@@ -44,8 +42,8 @@ export class HeaderBar extends React.Component {
                     {userIcon}
                 </div>
         );
-    }
-}
+    };
+};
 
 const mapStateToProps = state => ({
     loggedIn: state.auth.currentUser !== null

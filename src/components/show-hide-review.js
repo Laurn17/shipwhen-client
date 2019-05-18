@@ -11,16 +11,15 @@ class ShowHideReview extends React.Component {
   };
 
   render() {
-
     return (
       <div>
         <div className="addButton" onClick={() => this.setState({showReview: !this.state.showReview})}>
           <i class="fas fa-plus"></i>
         </div>
-        { this.state.showReview ? <AddReviewForm/> : null }
+        { this.state.showReview ? <AddReviewForm /> : null }
       </div>
-    )
-  }
+    );
+  };
 };
 
 export default ShowHideReview;

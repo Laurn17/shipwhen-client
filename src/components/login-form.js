@@ -22,8 +22,8 @@ export class LoginForm extends React.Component {
                 </div>
             );
         }
-        return (
 
+        return (
             <div id="login">
                 <form className="login-form" onSubmit={this.props.handleSubmit(values =>
                     this.onSubmit(values))}>
@@ -38,10 +38,9 @@ export class LoginForm extends React.Component {
                     <button disabled={this.props.pristine || this.props.submitting}> Log In </button>
                 </form>
             </div>
-
         );
-    }
-}
+    };
+};
 
 export default reduxForm({
     form: 'login',

@@ -6,7 +6,6 @@ import './review.css';
 class Review extends React.Component {
     
 	render() {
-
 		const estimated = new Date(this.props.estimate_date);
 		const arrived = new Date(this.props.arrive_date);
 		let status;
@@ -18,8 +17,7 @@ class Review extends React.Component {
 				status = "Late";
 			}
 			else status = "Early";
- 	
-			
+ 			
     	return (
 			<div className="reviewPage">
 				<div className="indivReview">
@@ -37,7 +35,7 @@ class Review extends React.Component {
 				</div> 
 			</div>
     	);
-    }
-}
+    };
+};
 
 export default Review;

@@ -15,26 +15,21 @@ class SearchForm extends React.Component {
   }
 
   render() {
-
     return (
       <form onSubmit={this.props.handleSubmit(values => this.onSubmit(values))}>
-
-          <label htmlFor="busName"></label>
-          <Field component={Input} type="text" name="busName" id="busName" placeholder="Business Name"/>
-          <button type="submit" disabled={this.props.pristine || this.props.submitting} >
-          Submit</button>
-
+        <label htmlFor="busName"></label>
+        <Field component={Input} type="text" name="busName" id="busName" placeholder="Business Name"/>
+        <button type="submit" disabled={ this.props.pristine || this.props.submitting} >Submit</button>
       </form>
     );
   };
 };
 
-// IMPORTING BUS NAME FROM STATE FOR CONDITIONAL LOGIC UNDER RENDER
 const mapStateToProps = state => {
   return {
     noData: state.busReviews.noData,
     error: state.busReviews.error
-  }
+  };
 }
 
 SearchForm = connect(
