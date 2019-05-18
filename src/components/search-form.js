@@ -3,14 +3,13 @@ import { connect } from 'react-redux';
 import { Field, reduxForm} from 'redux-form';
 import Input from './input';
 import history from './history';
-import {getBus} from '../actions/bus-reviews';
 
 // --------- THIS FORM IS FOR THE USER TO ENTER A BUS NAME TO THEN RETRIVE IT'S REVIEWS --------
 class SearchForm extends React.Component {
 
   onSubmit(values) {
     const name = values.busName;
-    console.log("Searching for Business: " + name);
+    console.log("Searching for shipping-time reviews on Business: " + name);
     history.push(`/reviews/${name}`);
   }
 

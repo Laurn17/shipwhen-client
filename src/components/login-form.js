@@ -27,7 +27,7 @@ export class LoginForm extends React.Component {
             <div id="login">
                 <form className="login-form" onSubmit={this.props.handleSubmit(values =>
                     this.onSubmit(values))}>
-                    
+                    {error}
                     <label htmlFor="username">Username</label>
                     <br/>
                     <Field component={Input} type="text" name="username" id="username" validate={[required, nonEmpty]} />

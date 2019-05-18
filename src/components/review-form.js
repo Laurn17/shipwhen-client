@@ -2,7 +2,7 @@ import React from 'react';
 import {reduxForm, Field, SubmissionError, focus} from 'redux-form';
 import Input from './input';
 import Select from './select';
-import {required, nonEmpty, matches, length, isTrimmed} from '../validators';
+import {required, nonEmpty} from '../validators';
 import {submitReview} from '../actions/bus-reviews';
 import { connect } from 'react-redux';
 
@@ -13,26 +13,35 @@ import { connect } from 'react-redux';
 class AddReviewForm extends React.Component {
     onSubmit(values, user) {
         console.log("submitting review form");
-        console.log(user);
       return this.props.dispatch(submitReview(values, user));
     }
 
     render() {
-        // let successMessage;
-        // if (this.props.submitSucceeded) {
-        //     successMessage = (
-        //         <div className="message message-success">
-        //             Message submitted successfully
-        //         </div>
-        //     );
-        // }
+        let errorMessage;
+        let successMessage;
+        if (this.props.submitSucceeded === false) {
+            errorMessage = (
+                <div className="message message-error">
+                    Please try again
+                </div>
+            );
+        }
+        else if (this.props.submitSucceeded === true) {
+           successMessage = (
+                <div className="message message-success">
+                    Review submitted successfully
+                </div>
+            ); 
+        }
+
         const user = this.props.created_by.username;
 
         return (
             <div id="review">
 
                 <form className="review-form" onSubmit={this.props.handleSubmit(values => this.onSubmit(values, user))}>
-
+                    {errorMessage}
+                    {successMessage}
                     <label htmlFor="bus_name">Business Name</label>
                     <Field component={Input} type="text" name="bus_name" validate={[required, nonEmpty]} />
                     
@@ -68,7 +77,8 @@ class AddReviewForm extends React.Component {
 
 const mapStateToProps = state => {
   return {
-    created_by: state.auth.currentUser
+    created_by: state.auth.currentUser,
+    submitSucceeded: state.busReviews.submitSucceeded
   }
 }
 
@@ -78,5 +88,5 @@ AddReviewForm = connect(
 
 
 export default reduxForm({
-  form: 'review' 
+  form: 'review'
 })(AddReviewForm);

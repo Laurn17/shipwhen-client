@@ -14,7 +14,7 @@ class ShowHideReview extends React.Component {
     return (
       <div>
         <div className="addButton" onClick={() => this.setState({showReview: !this.state.showReview})}>
-          <i class="fas fa-plus"></i>
+          <i className="fas fa-plus"></i>
         </div>
         { this.state.showReview ? <AddReviewForm /> : null }
       </div>

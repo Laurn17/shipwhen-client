@@ -37,6 +37,20 @@ export const fetchBusNoData = (bus_name) => ({
     bus_name
 });
 
+export const FETCH_REVIEW_ERROR = 'FETCH_REVIEW_ERROR';
+export const fetchReviewError = () => ({
+    type: FETCH_REVIEW_ERROR,
+    loading: false,
+    submitSucceeded: false
+});
+
+export const FETCH_REVIEW_SUCCESS = 'FETCH_REVIEW_SUCCESS';
+export const fetchReviewSuccess = () => ({
+    type: FETCH_REVIEW_ERROR,
+    loading: false,
+    submitSucceeded: true
+});
+
 // ---------------- GET THE BUSINESS'S REVIEWS FROM SERVER -------------- Used in components/landing-page
 export const getBus = (bus_name) => dispatch => {
     dispatch(fetchBusRequest());
@@ -54,7 +68,7 @@ export const getBus = (bus_name) => dispatch => {
         })
         .then(res => {
             if (res.length === 0) {
-                console.log("No Business Found");
+                console.log("No Business shipping-time review(s) found");
                 dispatch(fetchBusNoData(`${bus_name}`))
                 history.push("/no-business")
                 .then(err => Promise.reject());
@@ -62,7 +76,7 @@ export const getBus = (bus_name) => dispatch => {
             return res
         })
         .then(bus => {
-            console.log("Found Business Successfully");
+            console.log("Found Business shipping-time review(s) successfully");
             console.log(bus);
             dispatch(fetchBusSuccess(bus))
             history.push(`/reviews/${bus_name}`);
@@ -86,11 +100,9 @@ export const submitReview = (values, user) => dispatch => {
                 dataType: 'json'
             })
             .then(res => {
-                return res.json();
-            })
-
-            .then(res => {
                     if (!res.ok) {
+                        console.log("Could not submit shipping-time review");
+                        dispatch(fetchReviewError());
                         if (
                             res.headers.has('content-type') &&
                             res.headers
@@ -109,7 +121,9 @@ export const submitReview = (values, user) => dispatch => {
                     return;
                 })
                 .then(res => {
-                    console.log(res);
+                    console.log("Submitted shipping-time review successfully");
+                    dispatch(fetchReviewSuccess())
+                    dispatch(getBus(`${values.bus_name}`));
                 })
                 .catch(err => {
                     const {reason, message, location} = err;

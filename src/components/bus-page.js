@@ -2,7 +2,6 @@ import React from 'react';
 import { connect } from 'react-redux';
 import Review from './review';
 import ReviewTogglePage from './review-toggle-page';
-import {submitReview} from '../actions/bus-reviews';
 import {getBus} from '../actions/bus-reviews';
 
 import './bus-page.css';
@@ -11,7 +10,6 @@ class BusPage extends React.Component {
 
 	componentDidMount() {
 		const bus = this.props.match.params.bus_name;
-	 	console.log(bus);
 		this.props.dispatch(getBus(bus));
 	}
 

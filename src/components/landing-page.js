@@ -2,7 +2,6 @@ import React from 'react';
 import {connect} from 'react-redux';
 import './landing-page.css';
 import SearchPage from './search-page';
-import NoBusError from './no-bus-error';
 
 // ------------------ THIS IS THE LANDING PAGE USERS FIRST SEE ------------------ Used in components/App
 export class LandingPage extends React.Component {

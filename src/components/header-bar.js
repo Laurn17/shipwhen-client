@@ -24,6 +24,7 @@ export class HeaderBar extends React.Component {
         if (this.props.loggedIn === false) {
             loginSignup =
                 <div>
+
                     <button>
                         <Link to="/login-page">Log In</Link>
                     </button>

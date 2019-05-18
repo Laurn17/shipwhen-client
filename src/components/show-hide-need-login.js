@@ -14,7 +14,7 @@ class ShowHideNeedLogin extends React.Component {
     return (
       <div>
         <div className="addButton" onClick={() => this.setState({showNeedLogin: !this.state.showNeedLogin})}>
-          <i class="fas fa-plus"></i>
+          <i className="fas fa-plus"></i>
         </div>
         { this.state.showNeedLogin ? <NeedLogin /> : null }
       </div>
