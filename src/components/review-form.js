@@ -48,9 +48,10 @@ class AddReviewForm extends React.Component {
                     <label htmlFor="delivery">Delivery Type</label>
                     <Field component={Select} type="select" name="delivery" validate={[required]}
                         options={{
-                            standard: "Standard",
-                            firstclass: "First Class",
-                            twoday: "Two Day"
+                            Standard: "Standard",
+                            "First-class": "First Class",
+                            "Two-day": "Two Day",
+                            Overnight: "Overnight"
                         }}
                     />
                     

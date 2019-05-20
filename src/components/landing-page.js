@@ -23,7 +23,7 @@ export class LandingPage extends React.Component {
             <br/><br/>
             <b>Find out average business shipping times.</b> Many companies often send misleading estimated shipping times. Lookup the Business Name to see what others have experienced.
             <br/><br/>
-            <b>Leave Positive or Negative Reviews:</b> Make it known if a company exaggerated their shipping pace or if your item arrived on time. Leaving a review is the best way to make shipping times public and help others avoid having that special item arrive late!
+            <b>Leave positive OR negative reviews.</b> Make it known if a company exaggerated their shipping pace or if your item arrived on time. Leaving a review is the best way to make shipping times public and help others avoid having that special item arrive late!
           </p>
         </section>
             

@@ -12,7 +12,7 @@ class ShowHideReview extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="showHideBody">
         <div className="addButton" onClick={() => this.setState({showReview: !this.state.showReview})}>
           <i className="fas fa-plus"></i>
         </div>

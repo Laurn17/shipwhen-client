@@ -12,7 +12,7 @@ class ShowHideNeedLogin extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="showHideBody">
         <div className="addButton" onClick={() => this.setState({showNeedLogin: !this.state.showNeedLogin})}>
           <i className="fas fa-plus"></i>
         </div>

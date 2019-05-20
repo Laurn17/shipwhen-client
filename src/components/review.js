@@ -16,16 +16,16 @@ class Review extends React.Component {
 				status = "Late";
 			}
 			else status = "Early";
- 			
+
     	return (
 			<div className="reviewPage">
 				<div className="indivReview">
 					<div className="revDetails">
-						<p>{this.props.date_created}</p>
-						<p>{this.props.created_by}</p>
-						<p className="status">{status}</p>
+						<p className="one">{this.props.date_created}</p>
+						<p className="two">{this.props.created_by}</p>
+						<p className="three status">{status}</p>
 					</div>
-					<p>{this.props.bus_name}</p>
+					<p>Business: {this.props.bus_name}</p>
 					<p>Delivery Type: {this.props.delivery}</p>
 					<p>Ordered On: {this.props.order_date}</p>
 					<p>Estimated to Arrive: {this.props.estimate_date}</p>

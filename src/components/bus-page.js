@@ -22,7 +22,7 @@ class BusPage extends React.Component {
 
 	    return (
 	        <div className="busPage">
-	            <h1>Reviews For {this.props.match.params.bus_name}</h1>
+	            <h1>Reviews for {this.props.match.params.bus_name}</h1>
 	            <ul className="reviews1">
 	                {reviews}
 	            </ul>

@@ -1,0 +1,50 @@
+.header-bar {
+    font-family: "Open Sans", sans-serif;
+}
+
+div.headerButtons {
+	position: relative;
+    float: right;
+    right: 25px;
+    top: -61px;
+}
+
+div.headerButtons button {
+	margin-right: 9px;
+    font-size: 14px;
+    border-radius: 5px;
+    height: 30px;
+    width: 70px;
+    padding: 5px;
+    border: 0;
+}
+
+div.headerButtons .bone {
+    background-color: #787aff;
+    color: white;
+}
+
+div.headerButtons .btwo {
+    background-color: #9a9a9a;
+    color: white;
+}
+
+div.headerButtons .bone:hover {
+    background-color: #5c5eec;
+}
+
+div.headerButtons .btwo:hover {
+    background-color: #757575;
+}
+
+h1 a {
+    text-decoration: none;
+    font-size:22px;
+    position: relative;
+    top: -10px;
+    left: 25px;
+}
+
+.headerButtons a {
+	text-decoration: none;
+}

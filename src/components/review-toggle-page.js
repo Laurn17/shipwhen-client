@@ -8,7 +8,7 @@ class ReviewTogglePage extends React.Component {
 
 	render() {
     	return (
-	        <div className="review-form-page">
+	        <div className="review-toggle-page">
 	            { this.props.created_by ? < ShowHideReview /> : <ShowHideNeedLogin /> }  
 	        </div>
     	);

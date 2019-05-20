@@ -1,5 +1,14 @@
 .noBus-content{
-	margin-top:	100px;
+	font-family: "Open Sans", sans-serif;
+	margin-top:	65px;
 	width: 100%;
 	text-align: center;
+	background-color: #eeeeee;
+}
+
+.noBus-content h1 {
+	padding-top: 50px;
+	text-align: center;
+	color: rgb(69, 72, 253);
+	text-shadow: 1px 1px 1px rgb(24, 26, 111);
 }
