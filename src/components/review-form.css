@@ -1,4 +1,64 @@
-.booleanField label {
+/*.booleanField label {
 	display: inline-block;
 	flex: 1;
+}
+*/
+body {
+    box-sizing: border-box;
+}
+
+.review-form { 
+	position: fixed;
+    right: 50px;
+    bottom: 85px;  
+    border: 1px solid rgb(49, 52, 197);
+    border-radius: 3px;
+    padding: 15px 15px 10px 15px;
+    margin-top: 10px;
+    background-color: white;
+    box-shadow: 1px 1px 1px 2px;
+    max-width: 330px;
+    width: 310px;
+    min-width: 238px;
+    color: #6265fc;
+    font-weight: bold;
+}
+
+label {
+    text-align: left;
+}
+
+.review-form input, .review-form select {
+    width: 100%;
+    font-size: 15px;
+    margin-top: 7px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    height: 30px;
+    padding: 5px;
+}
+
+.review-form Button {
+    width: 50%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 16px;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    height: 40px;
+    padding: 5px;
+}
+
+#arrive {
+	width: 20px;
+	margin-top: 0;
+	margin-bottom: 5px;
+}
+
+.form-error {
+	font-weight: normal;
+	color: red;
+	float: right;
 }

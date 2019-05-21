@@ -1,0 +1,11 @@
+.needLogin {
+	position: fixed;
+    right: 50px;
+    bottom: 85px;
+    color: #4548FD;
+    border: 1px solid #787aff;
+    border-radius: 3px;
+    padding: 15px 15px 10px 15px;
+    margin-top: 10px;
+    background-color: white;
+}

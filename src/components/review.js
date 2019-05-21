@@ -10,21 +10,22 @@ class Review extends React.Component {
 		let status;
 			
 			if (arrived.getTime() === estimated.getTime()) {
-				status = "On Time" ;
+				status = <span id="blue">On Time</span>;
 			}
 			else if (arrived > estimated) {
-				status = "Late";
+				status = <span id="red">Late</span>;
 			}
-			else status = "Early";
+			else status = <span id="green">Early</span>;
 
     	return (
 			<div className="reviewPage">
 				<div className="indivReview">
 					<div className="revDetails">
-						<p className="one">{this.props.date_created}</p>
-						<p className="two">{this.props.created_by}</p>
+						<p className="one">{this.props.created_by}</p>
+						<p className="two">{this.props.date_created}</p>
 						<p className="three status">{status}</p>
 					</div>
+					<div className="hr"><hr /></div>
 					<p>Business: {this.props.bus_name}</p>
 					<p>Delivery Type: {this.props.delivery}</p>
 					<p>Ordered On: {this.props.order_date}</p>

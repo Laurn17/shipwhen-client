@@ -6,22 +6,47 @@
 	margin: 0 auto;
 	margin-top: 15px;
 	width: 50%;
+	max-width: 540px;
 	border: 2px solid #dedede;
 	padding: 10px;
 	background-color: white;
 	border-radius: 5px;
 }
-
-.revDetails p{
-	display: inline-block;
+.revDetails{
+	text-align:center;
 }
 
-/*.revDetails .two {
-	text-align: center;
-}*/
+.revDetails p {
+	display: inline-block;
+	width: 33%;
+}
+
+.revDetails .one {
+	float: left;
+}
 
 .revDetails .three {
 	float: right;
 }
 
+#blue {
+	color: #787aff;
+    padding: 2.5px;
+    border: 1px solid #6668fd;
+    border-radius: 3px;
+}
+
+#red {
+	color: red;
+	padding: 3px 16.5px 3px 16.5px;
+    border: 1px solid #f73c3c;
+    border-radius: 3px;
+}
+
+#green {
+	color: green;
+	padding: 3px 14px 3px 14px;
+    border: 1px solid #25a71c;
+    border-radius: 3px;
+}
 

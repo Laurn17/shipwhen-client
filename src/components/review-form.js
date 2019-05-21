@@ -6,7 +6,7 @@ import {required, nonEmpty} from '../validators';
 import {submitReview} from '../actions/bus-reviews';
 import { connect } from 'react-redux';
 
-// import './review-form.css';
+import './review-form.css';
 
 
 // ---------------- THIS FORM IS FOR USERS TO ADD A BUSINESS SHIPPING REVIEW -------------- Used in components/bus-page
@@ -37,7 +37,7 @@ class AddReviewForm extends React.Component {
         const user = this.props.created_by.username;
 
         return (
-            <div id="review">
+            <div id="reviewForm">
 
                 <form className="review-form" onSubmit={this.props.handleSubmit(values => this.onSubmit(values, user))}>
                     {errorMessage}
@@ -64,7 +64,7 @@ class AddReviewForm extends React.Component {
                     <label htmlFor="arrive">Package Arrived</label>
                     <Field component={Input} type="checkbox" name="arrive" />
 
-                    <label htmlFor="arrive_date">Arrival Date</label>
+                    <label id="arrive-date-label" htmlFor="arrive_date">Arrival Date</label>
                     <Field component={Input} type="Date" name="arrive_date" />
 
                     <button type="submit" disabled={this.props.pristine || this.props.submitting}>
