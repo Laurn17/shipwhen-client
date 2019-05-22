@@ -5,17 +5,24 @@ import './review.css';
 class Review extends React.Component {
     
 	render() {
-		const estimated = new Date(this.props.estimate_date);
-		const arrived = new Date(this.props.arrive_date);
-		let status;
-			
-			if (arrived.getTime() === estimated.getTime()) {
-				status = <span id="blue">On Time</span>;
-			}
-			else if (arrived > estimated) {
-				status = <span id="red">Late</span>;
-			}
-			else status = <span id="green">Early</span>;
+	    const estimated = new Date(this.props.estimate_date);
+	    let arrived;
+	    let status;
+
+	    if(this.props.arrive_date) {
+	      arrived = new Date(this.props.arrive_date);
+	            
+	            if (arrived.getTime() === estimated.getTime()) {
+	                status = <span id="blue">On Time</span>;
+	            }
+	            else if (arrived > estimated) {
+	                status = <span id="orange">Late</span>;
+	            }
+	            else status = <span id="green">Early</span>;
+	    }
+	    else {
+	    	status = <span id="red">N/A</span>;
+	    }
 
     	return (
 			<div className="reviewPage">
@@ -31,7 +38,7 @@ class Review extends React.Component {
 					<p>Ordered On: {this.props.order_date}</p>
 					<p>Estimated to Arrive: {this.props.estimate_date}</p>
 					<p>Package Arrived: {this.props.arrive ? "Arrived" : "Didn't Arrive"}</p>
-					<p>Arrival Date: {this.props.arrive_date}</p>
+					<p>Arrival Date: {this.props.arrive_date ? this.props.arrive_date : "N/A"}</p>
 				</div> 
 			</div>
     	);

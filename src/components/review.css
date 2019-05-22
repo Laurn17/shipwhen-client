@@ -36,9 +36,17 @@
     border-radius: 3px;
 }
 
+#orange {
+	color: #f17f05;
+	padding: 3px 16.5px 3px 16.5px;
+    border: 1px solid #ff9320;
+    border-radius: 3px;
+}
+
+
 #red {
 	color: red;
-	padding: 3px 16.5px 3px 16.5px;
+	padding: 3px 19px 3px 19px;
     border: 1px solid #f73c3c;
     border-radius: 3px;
 }

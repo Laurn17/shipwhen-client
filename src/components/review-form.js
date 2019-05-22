@@ -1,5 +1,5 @@
 import React from 'react';
-import {reduxForm, Field, SubmissionError, focus} from 'redux-form';
+import {reduxForm, Field, SubmissionError, focus, formValueSelector} from 'redux-form';
 import Input from './input';
 import Select from './select';
 import {required, nonEmpty} from '../validators';
@@ -13,12 +13,14 @@ import './review-form.css';
 class AddReviewForm extends React.Component {
     onSubmit(values, user) {
         console.log("submitting review form");
-      return this.props.dispatch(submitReview(values, user));
+        this.props.toggleForm();
+        return this.props.dispatch(submitReview(values, user));
     }
 
     render() {
         let errorMessage;
         let successMessage;
+
         if (this.props.submitSucceeded === false) {
             errorMessage = (
                 <div className="message message-error">
@@ -26,6 +28,7 @@ class AddReviewForm extends React.Component {
                 </div>
             );
         }
+
         else if (this.props.submitSucceeded === true) {
            successMessage = (
                 <div className="message message-success">
@@ -33,13 +36,14 @@ class AddReviewForm extends React.Component {
                 </div>
             ); 
         }
+        
 
         const user = this.props.created_by.username;
 
         return (
-            <div id="reviewForm">
+            <div>
 
-                <form className="review-form" onSubmit={this.props.handleSubmit(values => this.onSubmit(values, user))}>
+                <form id="reviewForm" className="review-form" onSubmit={this.props.handleSubmit(values => this.onSubmit(values, user))}>
                     {errorMessage}
                     {successMessage}
                     <label htmlFor="bus_name">Business Name</label>
@@ -64,8 +68,12 @@ class AddReviewForm extends React.Component {
                     <label htmlFor="arrive">Package Arrived</label>
                     <Field component={Input} type="checkbox" name="arrive" />
 
-                    <label id="arrive-date-label" htmlFor="arrive_date">Arrival Date</label>
-                    <Field component={Input} type="Date" name="arrive_date" />
+                    { this.props.arrive && (
+                        <>
+                            <label id="arrive-date-label" htmlFor="arrive_date">Arrival Date</label>
+                            <Field component={Input} type="Date" name="arrive_date" />
+                        </>
+                    ) }     
 
                     <button type="submit" disabled={this.props.pristine || this.props.submitting}>
                         Submit
@@ -76,18 +84,20 @@ class AddReviewForm extends React.Component {
     };
 };
 
+AddReviewForm = reduxForm({
+  form: 'reviewForm'
+})(AddReviewForm);
+
+const selector = formValueSelector('reviewForm');
+
 const mapStateToProps = state => {
   return {
     created_by: state.auth.currentUser,
-    submitSucceeded: state.busReviews.submitSucceeded
+    submitSucceeded: state.busReviews.submitSucceeded,
+    arrive: selector(state, 'arrive')
   }
 }
 
-AddReviewForm = connect(
+export default connect(
   mapStateToProps
 )(AddReviewForm);
-
-
-export default reduxForm({
-  form: 'review'
-})(AddReviewForm);
