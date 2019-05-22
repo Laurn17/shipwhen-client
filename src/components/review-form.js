@@ -47,10 +47,10 @@ class AddReviewForm extends React.Component {
                     {errorMessage}
                     {successMessage}
                     <label htmlFor="bus_name">Business Name</label>
-                    <Field component={Input} type="text" name="bus_name" validate={[required, nonEmpty]} />
+                    <Field component={Input} type="text" name="bus_name" placeholder="Amazon" validate={[required, nonEmpty]} />
                     
                     <label htmlFor="delivery">Delivery Type</label>
-                    <Field component={Select} type="select" name="delivery" validate={[required]}
+                    <Field component={Select} type="select" name="delivery" validate={[required, nonEmpty]}
                         options={{
                             Standard: "Standard",
                             "First-class": "First Class",

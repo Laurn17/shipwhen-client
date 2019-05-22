@@ -27,23 +27,25 @@ export class SignupForm extends React.Component {
                         this.onSubmit(values)
                     )}>
                     <label htmlFor="firstName">First Name</label>
-                    <Field component={Input} type="text" name="firstName" />
+                    <Field component={Input} type="text" placeholder="first" name="firstName" />
                     <label htmlFor="lastName">Last Name</label>
-                    <Field component={Input} type="text" name="lastName" />
+                    <Field component={Input} type="text" placeholder="last" name="lastName" />
                     <label htmlFor="username">Username</label>
                     <Field
                         component={Input}
                         type="text"
                         name="username"
+                        placeholder="username"
                         validate={[required, nonEmpty, isTrimmed]}
                     />
                     <label htmlFor="email">E-mail</label>
-                    <Field component={Input} type="email" name="email" validate={[required]} />
+                    <Field component={Input} type="email" placeholder="email@email.com" name="email" validate={[required]} />
                     <label htmlFor="password">Password</label>
                     <Field
                         component={Input}
                         type="password"
                         name="password"
+                        placeholder="password"
                         validate={[required, passwordLength, isTrimmed]}
                     />
                     <label htmlFor="passwordConfirm">Confirm Password</label>
@@ -51,6 +53,7 @@ export class SignupForm extends React.Component {
                         component={Input}
                         type="password"
                         name="passwordConfirm"
+                        placeholder="re-type password"
                         validate={[required, nonEmpty, matchesPassword]}
                     />
                     <button
