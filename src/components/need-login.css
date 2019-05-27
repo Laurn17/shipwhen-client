@@ -1,4 +1,5 @@
 .needLogin {
+	text-align: center;
 	position: fixed;
     right: 50px;
     bottom: 85px;
@@ -8,4 +9,29 @@
     padding: 15px 15px 10px 15px;
     margin-top: 10px;
     background-color: white;
+}
+
+@media only screen and (max-width: 395px) {
+    .needLogin {
+    	right: 30px;
+  }
+}
+
+@media only screen and (max-width: 370px) {
+    .needLogin {
+    	right: 22px;
+  }
+}
+
+@media only screen and (max-width: 343px) {
+    .needLogin {
+    	right: 10px;
+  }
+}
+
+@media only screen and (max-width: 324px) {
+    .needLogin {
+    	width: 250px;
+    	right: 17px;
+  }
 }

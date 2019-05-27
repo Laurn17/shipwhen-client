@@ -6,10 +6,9 @@ body {
 #login {
     opacity: 1;
     border: 1px solid rgb(49, 52, 197);
-    border-radius: 2px;
+    border-radius: 3px;
     padding: 17px 23px 14px 23px;
     background: white;
-    box-shadow: 1px 2px 2.3px 2px;
     max-width: 450px;
     min-width: 238px;
     color: rgb(84, 87, 255);

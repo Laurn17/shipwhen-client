@@ -1,12 +1,15 @@
+main {
+  background-color: #eeeeee;
+}
+
 .signup-page {
   font-family: "Open Sans", sans-serif;
   padding-left: 50px;
   padding-right: 50px;
   width: 100%;
-  height: auto;
+  height: 100%;
   background-color: rgb(238,238,238);
-  color: rgb(84, 87, 255);
-  
+  color: rgb(84, 87, 255); 
 }
 
 .signup-page::before, .signup-page::after {
@@ -17,25 +20,83 @@
 .signup-page::after {
   clear: both;
 }
-  
+ 
+.colContainer {
+  margin-top: 120px;
+  background-color: #eeeeee;
+}
+
 .col-6 {
-  margin: 120px auto 0px auto;
+  margin: 0 auto;
   width: 50%;
   float: left;
   padding-left: 2%;
   padding-right: 2%;
   padding-bottom: 30px;
+  background-color: #eeeeee;
 }
 
 .signup-page h1 {
-  padding-left: 30px;
+  padding-left: 15px;
   text-align: left;
   text-shadow: 2px 2px #ffffff;
-  font-size: 42px;
 }
 
 .signup-page h2 {
-  margin-top: 34px;
+  margin-top: 25px;
   margin-bottom: 20px;
   text-align: center;
+}
+
+.col-6 img {
+  width: 90%;
+}
+
+@media only screen and (max-width: 870px) {
+  .signup-page {
+    height: 118%;
+  }
+}
+
+@media only screen and (max-width: 675px) {
+  .signup-page {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .signup-page h1 {
+    padding-left: 0;
+    text-align: center;
+    font-size: 26px;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .signup-page {
+    height: 138%;
+  }
+
+  .signup-page h1 {
+    display: none;
+  }
+
+  .colContainer {
+    margin: 0 auto;
+    margin-top: 100px;
+    text-align: center;
+  }
+
+  .col-6 {
+    float: none;
+    width: 94%;
+  }
+
+  #colTwo {
+    margin-top: -25px;
+  }
+
+  .col-6 img {
+    width: 60%;
+    margin: 0 auto;
+  }
 }

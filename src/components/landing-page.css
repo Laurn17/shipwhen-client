@@ -10,8 +10,8 @@
   text-align: center;
   line-height: 1.5;
   width: 100%;
+  height: auto;
   margin-top: 65px;
-  margin-bottom: 100px;
 }
 
 #landing-header {
@@ -26,7 +26,6 @@
   position: relative;
   top: 89px;
   background-color: white;
-  width: 600px;
   margin: 0 auto;
   padding: 7px 0;
 
@@ -61,4 +60,17 @@ footer p {
   text-align: left;
   padding-top: 19px;
   padding-left: 15px;
+}
+
+@media only screen and (max-width: 550px) {
+  #landing-description {
+    text-align: center;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  #landing-header h2 {
+    font-size: 26px;
+    top: 91px;
+  }
 }

@@ -48,3 +48,12 @@ h1 a {
 .headerButtons a {
 	text-decoration: none;
 }
+
+@media only screen and (max-width: 365px) {
+  h1 a {
+    left: 15px;
+  }
+  div.headerButtons {
+    right: 8px;
+  }
+}
