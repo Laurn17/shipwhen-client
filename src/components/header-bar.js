@@ -17,7 +17,6 @@ export class HeaderBar extends React.Component {
         if (this.props.loggedIn) {
             userIcon = 
               <div>
-                <button className="bone">Reviews</button>
                 <button className="btwo" onClick={() => this.logOut()}>Log out</button>
               </div>
         }

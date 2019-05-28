@@ -1,39 +1,76 @@
+import {API_BASE_URL} from '../config';
+
 import {
-    FETCH_BUS_REQUEST
-    fetchBusRequest
-    FETCH_BUS_SUCCESS
-    fetchBusSuccess
-    FETCH_BUS_ERROR
-    fetchBusError
-    FETCH_BUS_NODATA
-    fetchBusNoData
-    FETCH_REVIEW_ERROR
-    fetchReviewError
-    FETCH_REVIEW_SUCCESS
-    fetchReviewSuccess
+    getBus,
+    submitReview,
+    FETCH_BUS_REQUEST,
+    fetchBusRequest,
+    FETCH_BUS_SUCCESS,
+    fetchBusSuccess,
+    FETCH_BUS_ERROR,
+    fetchBusError,
+    FETCH_BUS_NODATA,
+    fetchBusNoData,
+    FETCH_REVIEW_ERROR,
+    fetchReviewError,
+    FETCH_REVIEW_SUCCESS,
+    fetchReviewSuccess,
 } from './bus-reviews';
 
-// describe('restartGame', () => {
-//     it('Should return the action', () => {
-//         const correctAnswer = 10;
-//         const action = restartGame(correctAnswer);
-//         expect(action.type).toEqual(RESTART_GAME);
-//         expect(action.correctAnswer).toEqual(correctAnswer);
+
+// TESTING GET REVIEWS ASYNC ACTION
+describe('getBus', () => {
+    it('Should dispatch fetchBusSuccess', () => {
+        const reviews = {};
+
+        global.fetch = jest.fn().mockImplementation(() =>
+            Promise.resolve({
+                ok: true,
+                json() {
+                    return reviews;
+                }
+            })
+        );
+
+        const dispatch = jest.fn();
+        return getBus()(dispatch).then(() => {
+            expect(fetch).toHaveBeenCalledWith(`${API_BASE_URL}/reviews/undefined`, {
+            method: 'GET',
+            contentType: 'application/json',
+            dataType: 'json'
+        });
+            expect(dispatch).toHaveBeenCalledWith(fetchBusSuccess(reviews));
+        });
+    });
+});
+
+
+// TESTING SUBMIT REVIEW ASYNC ACTION
+// describe('submitReview', () => {
+//     it('Should dispatch fetchReviewSuccess()', () => {
+
+//         global.fetch = jest.fn().mockImplementation(() =>
+//             Promise.resolve({
+//                 ok: true,
+//                 json() {
+//                     return reviews;
+//                 }
+//             })
+//         );
+//         // values.user = user;
+//         const dispatch = jest.fn();
+//         return submitReview()(dispatch).then(() => {
+//             expect(fetch).toHaveBeenCalledWith(`${API_BASE_URL}/reviews`, {
+//                 method: 'POST',
+//                 body: JSON.stringify(values, user),
+//                 headers: {
+//                     'Content-Type': 'application/json'
+//                 },
+//                 dataType: 'json'
+//             });
+//             expect(dispatch).toHaveBeenCalledWith(fetchReviewSuccess());
+//         });
 //     });
 // });
 
-// describe('makeGuess', () => {
-//     it('Should return the action', () => {
-//         const guess = 10;
-//         const action = makeGuess(guess);
-//         expect(action.type).toEqual(MAKE_GUESS);
-//         expect(action.guess).toEqual(guess);
-//     });
-// });
 
-// describe('generateAuralUpdate', () => {
-//     it('Should return the action', () => {
-//         const action = generateAuralUpdate();
-//         expect(action.type).toEqual(GENERATE_AURAL_UPDATE);
-//     });
-// });

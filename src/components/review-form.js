@@ -13,15 +13,17 @@ import './review-form.css';
 class AddReviewForm extends React.Component {
     onSubmit(values, user) {
         console.log("submitting review form");
+        console.log(values);
         this.props.toggleForm();
         return this.props.dispatch(submitReview(values, user));
     }
 
     render() {
+        console.log(this.props.submitSucceeded);
         let errorMessage;
         let successMessage;
 
-        if (this.props.submitSucceeded === false) {
+        if (this.props.submitSucceeded !== null && !this.props.submitSucceeded) {
             errorMessage = (
                 <div className="message message-error">
                     Please try again
@@ -44,8 +46,9 @@ class AddReviewForm extends React.Component {
             <div>
 
                 <form id="reviewForm" className="review-form" onSubmit={this.props.handleSubmit(values => this.onSubmit(values, user))}>
-                    {errorMessage}
-                    {successMessage}
+                    {errorMessage && errorMessage}
+                    {successMessage && successMessage}
+
                     <label htmlFor="bus_name">Business Name</label>
                     <Field component={Input} type="text" name="bus_name" placeholder="Amazon" validate={[required, nonEmpty]} />
                     

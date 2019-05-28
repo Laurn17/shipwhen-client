@@ -41,15 +41,17 @@ export const FETCH_REVIEW_ERROR = 'FETCH_REVIEW_ERROR';
 export const fetchReviewError = () => ({
     type: FETCH_REVIEW_ERROR,
     loading: false,
-    submitSucceeded: false
+    submitSucceeded: "no"
 });
 
 export const FETCH_REVIEW_SUCCESS = 'FETCH_REVIEW_SUCCESS';
 export const fetchReviewSuccess = () => ({
     type: FETCH_REVIEW_ERROR,
     loading: false,
-    submitSucceeded: true
+    submitSucceeded: "yes"
 });
+
+
 
 // ---------------- GET THE BUSINESS'S REVIEWS FROM SERVER -------------- Used in components/landing-page
 export const getBus = (bus_name) => dispatch => {
@@ -57,9 +59,6 @@ export const getBus = (bus_name) => dispatch => {
     return (
         fetch(`${API_BASE_URL}/reviews/${bus_name}`, {
             method: 'GET',
-            headers: {
-                'Authorization': 'Bearer ' + token
-            },
             contentType: 'application/json',
             dataType: 'json'
         })
@@ -122,7 +121,7 @@ export const submitReview = (values, user) => dispatch => {
                 })
                 .then(res => {
                     console.log("Submitted shipping-time review successfully");
-                    dispatch(fetchReviewSuccess())
+                    dispatch(fetchReviewSuccess());
                     dispatch(getBus(`${values.bus_name}`));
                 })
                 .catch(err => {
