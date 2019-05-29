@@ -46,31 +46,33 @@ describe('getBus', () => {
 
 
 // TESTING SUBMIT REVIEW ASYNC ACTION
-// describe('submitReview', () => {
-//     it('Should dispatch fetchReviewSuccess()', () => {
+describe('submitReview', () => {
+    it('Should dispatch fetchReviewSuccess()', () => {
 
-//         global.fetch = jest.fn().mockImplementation(() =>
-//             Promise.resolve({
-//                 ok: true,
-//                 json() {
-//                     return reviews;
-//                 }
-//             })
-//         );
-//         // values.user = user;
-//         const dispatch = jest.fn();
-//         return submitReview()(dispatch).then(() => {
-//             expect(fetch).toHaveBeenCalledWith(`${API_BASE_URL}/reviews`, {
-//                 method: 'POST',
-//                 body: JSON.stringify(values, user),
-//                 headers: {
-//                     'Content-Type': 'application/json'
-//                 },
-//                 dataType: 'json'
-//             });
-//             expect(dispatch).toHaveBeenCalledWith(fetchReviewSuccess());
-//         });
-//     });
-// });
+        global.fetch = jest.fn().mockImplementation(() =>
+            Promise.resolve({
+                ok: true,
+                json() {
+                    return reviews;
+                }
+            })
+        );
+
+        const values = {};
+        const user = "Laurn17";
+        const dispatch = jest.fn();
+        return submitReview(values, user)(dispatch).then(() => {
+            expect(fetch).toHaveBeenCalledWith(`${API_BASE_URL}/reviews`, {
+                method: 'POST',
+                body: JSON.stringify(values, user),
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                dataType: 'json'
+            });
+            expect(dispatch).toHaveBeenCalledWith(fetchReviewSuccess());
+        });
+    });
+});
 
 
