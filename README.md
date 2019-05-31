@@ -1,23 +1,24 @@
-#shipwhen? 
+# shipwhen? 
 largest worldwide shipping times directory to look up estimated vs. actual business shipping times.
 
 http://www.shipwhen.com
 
-#Demo:
+## Demo:
 UN: demo PW: DemoUser
 
+![alt text](./images/screenshot.png)
 
-#Getting Started
+## Getting Started
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
-#Prerequisites
+## Prerequisites
 https://nodejs.org/en/
 https://www.mongodb.com/
 https://reactjs.org/
 create a mongoDB Atlas account
 create a Heroku account 
 
-#Installing
+## Installing
 A step by step series of examples that tell you how to get a development env running
 
 git clone https://github.com/Laurn17/shipwhen-api
@@ -43,15 +44,15 @@ Run: heroku create --buildpack https://github.com/mars/create-react-app-buildpac
 
 git push heroku master
 
-#Running the tests
+## Running the tests
 npm test
 
-#Deployment
+## Deployment
 git push heroku master
 
 heroku ps:scale web=1
 
-#Built With
+## Built With
 express - The JS framework used
 mongoose - The database client
 passport -Authentication middleware
@@ -59,9 +60,9 @@ mocha - JS testing framework
 React.js - client side libary
 Redux.js - client side state management
 
-#Authors
+## Authors
 Lauren Morrow - Initial work - Laurn17
 Sean Robertson - Help, Edits
 
-#License
+## License
 This project is licensed under the MIT License - see the LICENSE.md file for details
