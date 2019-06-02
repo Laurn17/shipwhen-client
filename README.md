@@ -6,6 +6,8 @@ http://www.shipwhen.com
 ## Demo:
 UN: demo PW: DemoUser
 
+In search bar, type in: test
+
 ![alt text](src/images/screenshot.png)
 
 ## Getting Started
@@ -62,6 +64,7 @@ Redux.js - client side state management
 
 ## Authors
 Lauren Morrow - Initial work - Laurn17
+
 Sean Robertson - Help, Edits
 
 ## License
