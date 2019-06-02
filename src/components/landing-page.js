@@ -25,11 +25,11 @@ export class LandingPage extends React.Component {
             <br/><br/>
             <b>Leave positive OR negative reviews.</b> Make it known if a company exaggerated their shipping pace or if your item arrived on time. Leaving a review is the best way to make shipping times public and help others avoid having that special item arrive late!
           </p>
-          <p style="text-align: center;">** This is not a package tracking service **</p>
+          <p id="notice">[ This is not a tracking service ]</p>
         </section>
             
         <footer>
-          <p>Copyright ("c") 2019 shipwhen? | All Rights Reserved</p>
+          <p>Copyright © 2019 shipwhen? | All Rights Reserved</p>
         </footer>
       </div>
     );

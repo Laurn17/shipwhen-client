@@ -47,6 +47,13 @@
   font-size: 18px;
 }
 
+#notice {
+  border: 0!important;
+  background-color: #eeeeee!important;
+  color: #242424!important;
+  text-align: center;
+}
+
 footer {
   background-color: rgb(36, 36, 36);
   color: white;

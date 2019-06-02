@@ -24,7 +24,7 @@ class BusPage extends React.Component {
 	        <div className="busPage">
 	            <h1>Reviews for {this.props.match.params.bus_name}</h1>
 	            <ul className="reviews1">
-	                {reviews}
+	                {reviews.reverse(this.props.date_created)}
 	            </ul>
 	            <section id="review-page">
 	                < ReviewTogglePage />			
