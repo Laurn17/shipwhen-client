@@ -19,26 +19,6 @@ class AddReviewForm extends React.Component {
     }
 
     render() {
-        console.log(this.props.submitSucceeded);
-        let errorMessage;
-        let successMessage;
-
-        if (this.props.submitSucceeded !== null && !this.props.submitSucceeded) {
-            errorMessage = (
-                <div className="message message-error">
-                    Please try again
-                </div>
-            );
-        }
-
-        else if (this.props.submitSucceeded === true) {
-           successMessage = (
-                <div className="message message-success">
-                    Review submitted successfully
-                </div>
-            ); 
-        }
-        
 
         const user = this.props.created_by.username;
 
@@ -46,8 +26,6 @@ class AddReviewForm extends React.Component {
             <div>
 
                 <form id="reviewForm" className="review-form" onSubmit={this.props.handleSubmit(values => this.onSubmit(values, user))}>
-                    {errorMessage && errorMessage}
-                    {successMessage && successMessage}
 
                     <label htmlFor="bus_name">Business Name</label>
                     <Field component={Input} type="text" name="bus_name" placeholder="Amazon" validate={[required, nonEmpty]} />
@@ -96,7 +74,6 @@ const selector = formValueSelector('reviewForm');
 const mapStateToProps = state => {
   return {
     created_by: state.auth.currentUser,
-    submitSucceeded: state.busReviews.submitSucceeded,
     arrive: selector(state, 'arrive')
   }
 }

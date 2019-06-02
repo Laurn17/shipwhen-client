@@ -5,7 +5,6 @@ const initialState = {
     bus_name: null,
     reviews: [],
     error: null,
-    submitSucceeded: null,
     noData: null,
     loading: null
 };
@@ -26,8 +25,7 @@ export default function busReviewsReducer(state=initialState, action) {
     }
     if (action.type === actions.FETCH_REVIEW_ERROR) {
         return Object.assign({}, state, {
-            loading: action.loading,
-            submitSucceeded: action.submitSucceeded
+            loading: action.loading
         })
     }
     if (action.type === actions.FETCH_BUS_NODATA) {
@@ -39,8 +37,7 @@ export default function busReviewsReducer(state=initialState, action) {
     }
     if (action.type === actions.FETCH_REVIEW_SUCCESS) {
         return Object.assign({}, state, {
-            loading: action.loading,
-            submitSucceeded: action.submitSucceeded
+            loading: action.loading
         })
     }
     else if (action.type === actions.FETCH_BUS_SUCCESS) {

@@ -40,15 +40,13 @@ export const fetchBusNoData = (bus_name) => ({
 export const FETCH_REVIEW_ERROR = 'FETCH_REVIEW_ERROR';
 export const fetchReviewError = () => ({
     type: FETCH_REVIEW_ERROR,
-    loading: false,
-    submitSucceeded: "no"
+    loading: false
 });
 
 export const FETCH_REVIEW_SUCCESS = 'FETCH_REVIEW_SUCCESS';
 export const fetchReviewSuccess = () => ({
     type: FETCH_REVIEW_ERROR,
-    loading: false,
-    submitSucceeded: "yes"
+    loading: false
 });
 
 
