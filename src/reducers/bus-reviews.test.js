@@ -7,7 +7,6 @@ describe('busReviewsReducer', () => {
         bus_name: null,
         reviews: [],
         error: null,
-        submitSucceeded: null,
         noData: null,
         loading: null
     }
