@@ -1,5 +1,5 @@
 .showHideBody {
-	background-color: #eeeeee;
+	background-color: rgb(249, 249, 249);
 	padding-top: 25px;
 }
 
@@ -12,6 +12,7 @@
 	position: fixed;
 	bottom: 25px;
 	right: 25px;
+
 }
 
 .addButton:hover {
@@ -21,8 +22,16 @@
 
 .addButton i {
 	font-size: 25px;
+	position: fixed;
 	font-weight: 600;
 	color: white;
-	margin-left: 12.5px;
-	margin-top: 10px;
+	bottom: 39px;
+	right: 40px;
+	-webkit-transition: -webkit-transform .7s ease-in-out;
+    transition: transform .7s ease-in-out;
+}
+
+.addButton i:hover {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
 }

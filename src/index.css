@@ -1,5 +1,6 @@
 html, body {
-  background-color: #eeeeee;
+  font-family: 'Hind', sans-serif;
+  background-color: rgb(249, 249, 249);
   margin: 0;
   padding: 0;
 }

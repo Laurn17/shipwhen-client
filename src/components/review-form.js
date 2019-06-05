@@ -13,7 +13,6 @@ import './review-form.css';
 class AddReviewForm extends React.Component {
     onSubmit(values, user) {
         console.log("submitting review form");
-        console.log(values);
         this.props.toggleForm();
         return this.props.dispatch(submitReview(values, user));
     }
@@ -21,14 +20,24 @@ class AddReviewForm extends React.Component {
     render() {
 
         const user = this.props.created_by.username;
-
+        function titleCase(str) {
+           var splitStr = str.toLowerCase().split(' ');
+           for (var i = 0; i < splitStr.length; i++) {
+               // You do not need to check if i is larger than splitStr length, as your for does that for you
+               // Assign it back to the array
+               splitStr[i] = splitStr[i].charAt(0).toUpperCase() + splitStr[i].substring(1);     
+           }
+           // Directly return the joined string
+           return splitStr.join(' '); 
+        }
+        
         return (
             <div>
 
                 <form id="reviewForm" className="review-form" onSubmit={this.props.handleSubmit(values => this.onSubmit(values, user))}>
 
                     <label htmlFor="bus_name">Business Name</label>
-                    <Field component={Input} type="text" name="bus_name" placeholder="Amazon" validate={[required, nonEmpty]} />
+                    <Field component={Input} type="text" name="bus_name" placeholder="Amazon" validate={[required, nonEmpty]} normalize={titleCase} />
                     
                     <label htmlFor="delivery">Delivery Type</label>
                     <Field component={Select} type="select" name="delivery" validate={[required, nonEmpty]}

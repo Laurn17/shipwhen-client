@@ -12,8 +12,8 @@ export function LoginPage(props) {
     
 	return (
 	    <div className="login-page">
-	        <h1>Welcome.</h1>
-	        <p><b> Leaving a Shipping Time Review Helps Users Like You! </b></p>
+	        <h1>Welcome</h1>
+	        <p><b> leaving a shipping-time review helps users like you</b></p>
 	        <LoginForm /> 
 	    </div>
 	);

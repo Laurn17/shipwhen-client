@@ -3,8 +3,7 @@
 }
 
 .landing-page {
-  font-family: "Open Sans",
-  sans-serif;
+  font-family: 'Hind', sans-serif;
   font-size: 20px;
   color: rgb(69, 72, 253);
   text-align: center;
@@ -15,44 +14,56 @@
 }
 
 #landing-header {
-  height: 208px;
-  background-image: url('../images/landing-background1.jpg');
-  margin-top: -33px;
+  height: 400px;
+  background-size: cover;
+  background-position: right bottom;
+  background-repeat: no-repeat;
+  background-image: url('../images/landing-background2.jpg');
   
+}
+
+#landing-header h1 {
+  text-shadow: 1.5px 1px 1px grey;
+  position: relative;
+  color: white;
+  top: 100px;
+  left: -280px;
+  margin: 0 auto;
 }
 
 #landing-header h2 {
   text-shadow: 1px 1px 1px rgb(24, 26, 111);
+  font-weight: lighter;
   position: relative;
-  top: 89px;
-  background-color: white;
+  color: white;
+  top: 110px;
+  left: -280px;
   margin: 0 auto;
-  padding: 7px 0;
-
 }
 
 
 #landing-description {
     margin-top: -25px;
     text-align: justify;
-    padding: 30px 50px 30px 50px;
-    background-color: rgb(238, 238, 238);
+    padding: 30px 50px 50px 50px;
+    background-color: rgb(249, 249, 249);
 }
 
 #landing-description p {
   padding: 20px 40px;
-  border: 2px solid #dedede;
+  border: 1px solid #dedede;
   border-radius: 5px;
   background-color: white;
   font-size: 18px;
 }
 
-#notice {
-  border: 0!important;
-  background-color: #eeeeee!important;
-  color: #242424!important;
-  text-align: center;
-  padding: 0!important;
+.landingIcons {
+  color: #757575;
+  padding-right: 20px;
+  height: 34px;
+  float: left;
+  clear: both;
+  font-size: 34px;
 }
 
 footer {
@@ -70,9 +81,105 @@ footer p {
   padding-left: 15px;
 }
 
+@media only screen and (max-width: 1200px) {
+  #landing-header h1 {
+    left: -200px;
+  }
+
+  #landing-header h2 {
+    left: -200px;
+  }
+}
+
+@media only screen and (max-width: 1085px) {
+  #landing-header h1 {
+    font-size: 34px;
+    left: -180px;
+  }
+
+  #landing-header h2 {
+    font-size: 26px;
+    left: -180px;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  #landing-header h1 {
+    font-size: 30px;
+    left: -170px;
+  }
+
+  #landing-header h2 {
+    font-size: 22px;
+    left: -170px;
+  }
+}
+
+@media only screen and (max-width: 870px) {
+  #landing-header h1 {
+    font-size: 30px;
+    left: -150px;
+  }
+
+  #landing-header h2 {
+    font-size: 22px;
+    left: -150px;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  #landing-header h1 {
+    font-size: 30px;
+    left: -120px;
+  }
+
+  #landing-header h2 {
+    font-size: 22px;
+    left: -120px;
+  }
+}
+
+@media only screen and (max-width: 733px) {
+  #landing-header h1 {
+    text-shadow: 1.5px 1.5px 2px black;
+    font-size: 30px;
+    left: -80px;
+  }
+
+  #landing-header h2 {
+    font-size: 22px;
+    left: -80px;
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  #landing-header h1 {
+    text-shadow: 1.5px 1.5px 2px black;
+    font-size: 28px;
+    left: -60px;
+  }
+
+  #landing-header h2 {
+    font-size: 20px;
+    left: -60px;
+  }
+}
+
 @media only screen and (max-width: 550px) {
   #landing-description {
     text-align: center;
+  }
+  #landing-header h1 {
+    text-shadow: 1.5px 1.5px 2px black;
+    font-size: 28px;
+    top: 140px;
+    left: -35px;
+  }
+
+  #landing-header h2 {
+    font-size: 20px;
+    top: 140px;
+    left: -35px;
   }
 }
 
@@ -80,11 +187,47 @@ footer p {
   #landing-description p {
     padding: 20px 20px;
   }
+  #landing-header h1 {
+    text-shadow: 1.5px 1.5px 2px black;
+    font-size: 28px;
+    top: 130px;
+    left: 0;
+  }
+
+  #landing-header h2 {
+    font-size: 20px;
+    top: 130px;
+    left: 0;
+  }
 }
 
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 401px) {
+ #landing-header h1 {
+    text-shadow: 1.5px 1.5px 2px black;
+    font-size: 28px;
+    top: 100px;
+    left: 0;
+  }
+
   #landing-header h2 {
-    font-size: 26px;
-    top: 91px;
+    padding: 0 5px 0 5px;
+    font-size: 20px;
+    top: 110px;
+    left: 0;
+  }
+}
+
+@media only screen and (max-width: 382px) {
+ #landing-header h1 {
+    text-shadow: 1.5px 1px 1px black;
+    font-size: 28px;
+    top: 50px;
+    left: 0;
+  }
+
+  #landing-header h2 {
+    font-size: 20px;
+    top: 80px;
+    left: 0;
   }
 }

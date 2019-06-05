@@ -8,7 +8,6 @@ class Review extends React.Component {
 	    const estimated = new Date(this.props.estimate_date);
 	    let arrived;
 	    let status;
-
 	    if(this.props.arrive_date) {
 	      arrived = new Date(this.props.arrive_date);
 	            
