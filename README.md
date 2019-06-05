@@ -8,7 +8,7 @@ UN: demo PW: DemoUser
 
 In search bar, type in: test
 
-![alt text](src/images/screenshot.png)
+![alt text](src/images/shipwhen-landing-page.png)
 
 ## Getting Started
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
