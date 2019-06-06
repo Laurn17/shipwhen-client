@@ -9,18 +9,17 @@
     border-radius: 5px;
     height: 40px;
     padding: 5px;
-    background-color: #787aff;
+    background-color: #81A2C8;
     color: white;
 }
 
 .searchForm button:hover {
     cursor: pointer;
-    background-color: #5c5eec;
+    background-color: #51749c;
 }
 
 .searchForm {
   padding-top: 50px;
-/*  background-color: rgb(238, 238, 238);*/
   text-align: center;
   min-height: 150px;
 }

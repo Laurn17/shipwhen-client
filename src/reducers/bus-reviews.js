@@ -40,10 +40,18 @@ export default function busReviewsReducer(state=initialState, action) {
             loading: action.loading
         })
     }
-    else if (action.type === actions.FETCH_BUS_SUCCESS) {
+    if (action.type === actions.FETCH_BUS_SUCCESS) {
         return Object.assign({}, state, {
             reviews: action.reviews,
-            loading: action.loading
+            loading: action.loading,
+            noData: action.noData
+        })
+    }
+    else if (action.type === actions.FETCH_MYREVIEWS_SUCCESS) {
+        return Object.assign({}, state, {
+            reviews: action.reviews,
+            loading: action.loading,
+            noData: action.noData
         })
     }
     return state;

@@ -20,7 +20,7 @@ div.headerButtons button {
 }
 
 div.headerButtons .bone {
-    background-color: #787aff;
+    background-color: #81A2C8;
     color: white;
 }
 
@@ -30,7 +30,7 @@ div.headerButtons .btwo {
 }
 
 div.headerButtons .bone:hover {
-    background-color: #5c5eec;
+    background-color: #51749c;
 }
 
 div.headerButtons .btwo:hover {

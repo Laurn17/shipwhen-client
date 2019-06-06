@@ -2,7 +2,7 @@
 	font-family: "Open Sans", sans-serif;
 	margin-top:	65px;
 	width: 100%;
-	background-color: rgb(249, 249, 249);
+	background-color: #DEE2E4;
 }
 
 .noBus-content .noBus-text {
@@ -13,7 +13,7 @@
 }
 
 .noBus-content h1 {
-	color: rgb(69, 72, 253);
+	color: #51749c;
 	text-shadow: 1px 1px 1px rgb(24, 26, 111);
 }
 

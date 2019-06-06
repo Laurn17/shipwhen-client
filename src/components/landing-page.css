@@ -5,7 +5,7 @@
 .landing-page {
   font-family: 'Hind', sans-serif;
   font-size: 20px;
-  color: rgb(69, 72, 253);
+  color: #23374e;
   text-align: center;
   line-height: 1.5;
   width: 100%;
@@ -23,7 +23,7 @@
 }
 
 #landing-header h1 {
-  text-shadow: 1.5px 1px 1px grey;
+  text-shadow: 1.5px 1px 3px black;
   position: relative;
   color: white;
   top: 100px;
@@ -46,7 +46,7 @@
     margin-top: -25px;
     text-align: justify;
     padding: 30px 50px 50px 50px;
-    background-color: rgb(249, 249, 249);
+    background-color: #DEE2E4;
 }
 
 #landing-description p {
@@ -58,7 +58,7 @@
 }
 
 .landingIcons {
-  color: #757575;
+  color: #81A2C8;
   padding-right: 20px;
   height: 34px;
   float: left;
@@ -141,27 +141,25 @@ footer p {
 
 @media only screen and (max-width: 733px) {
   #landing-header h1 {
-    text-shadow: 1.5px 1.5px 2px black;
+    text-shadow: 1.5px 1.5px 3px black;
     font-size: 30px;
-    left: -80px;
+    left: 0;
   }
 
   #landing-header h2 {
     font-size: 22px;
-    left: -80px;
+    left: 0;
   }
 }
 
 @media only screen and (max-width: 650px) {
   #landing-header h1 {
-    text-shadow: 1.5px 1.5px 2px black;
+    text-shadow: 1.5px 1.5px 3px black;
     font-size: 28px;
-    left: -60px;
   }
 
   #landing-header h2 {
     font-size: 20px;
-    left: -60px;
   }
 }
 
@@ -170,16 +168,14 @@ footer p {
     text-align: center;
   }
   #landing-header h1 {
-    text-shadow: 1.5px 1.5px 2px black;
+    text-shadow: 1.5px 1.5px 3px black;
     font-size: 28px;
     top: 140px;
-    left: -35px;
   }
 
   #landing-header h2 {
     font-size: 20px;
     top: 140px;
-    left: -35px;
   }
 }
 
@@ -188,9 +184,9 @@ footer p {
     padding: 20px 20px;
   }
   #landing-header h1 {
-    text-shadow: 1.5px 1.5px 2px black;
+    text-shadow: 1.5px 1.5px 3px black;
     font-size: 28px;
-    top: 130px;
+    top: 120px;
     left: 0;
   }
 
@@ -203,7 +199,7 @@ footer p {
 
 @media only screen and (max-width: 401px) {
  #landing-header h1 {
-    text-shadow: 1.5px 1.5px 2px black;
+    text-shadow: 1.5px 1.5px 3px black;
     font-size: 28px;
     top: 100px;
     left: 0;
@@ -219,7 +215,7 @@ footer p {
 
 @media only screen and (max-width: 382px) {
  #landing-header h1 {
-    text-shadow: 1.5px 1px 1px black;
+    text-shadow: 1.5px 1.5px 3px black;
     font-size: 28px;
     top: 50px;
     left: 0;

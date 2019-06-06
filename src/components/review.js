@@ -35,9 +35,9 @@ class Review extends React.Component {
 					<p>Business: {this.props.bus_name}</p>
 					<p>Delivery Type: {this.props.delivery}</p>
 					<p>Ordered On: {this.props.order_date}</p>
-					<p>Estimated to Arrive: {this.props.estimate_date}</p>
+					<p><b>Estimated</b> to Arrive: {this.props.estimate_date}</p>
 					<p>Package Arrived: {this.props.arrive ? "Arrived" : "Didn't Arrive"}</p>
-					<p>Arrival Date: {this.props.arrive_date ? this.props.arrive_date : "N/A"}</p>
+					<p><b>Arrived:</b> {this.props.arrive_date ? this.props.arrive_date : "N/A"}</p>
 				</div> 
 			</div>
     	);

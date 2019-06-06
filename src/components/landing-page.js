@@ -21,15 +21,15 @@ export class LandingPage extends React.Component {
             
         <section id="landing-description">
           <p>
-            <div className="landingIcons"><i class="fa fa-truck"></i></div>
+            <div className="landingIcons"><i className="fa fa-truck"></i></div>
             <b>shipwhen?</b> is the largest shipping times directory to look up <b>estimated vs. actual</b> business shipping times, built by people like YOU, the users. We have the largest, most extensive business search available for finding shipping information. Shipwhen is a free directory of information on when items were ordered, estimated to arrive, and actually arrvied.
             <br/><br/>
 
-            <div className="landingIcons"><i class="far fa-clock"></i></div>
+            <div className="landingIcons"><i className="far fa-clock"></i></div>
             <b>Find out average business shipping times.</b> Many companies often send misleading estimated shipping times. Lookup the Business Name to see what others have experienced.
             <br/><br/>
 
-            <div className="landingIcons"><i class="fa fa-thumbs-up"></i></div>
+            <div className="landingIcons"><i className="fa fa-thumbs-up"></i></div>
             <b>Leave positive OR negative reviews.</b> Make it known if a company exaggerated their shipping pace or if your item arrived on time. Leaving a review is the best way to make shipping times public and help others avoid having that special item arrive late!
           </p>
         </section>

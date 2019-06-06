@@ -1,5 +1,6 @@
 .reviewPage {
-	background-color: rgb(249, 249, 249);
+	background-color: #DEE2E4;
+	font-family: 'Hind', sans-serif;
 }
 
 .indivReview {
@@ -30,30 +31,34 @@
 }
 
 #blue {
-	color: #787aff;
+	background-color: #787aff;
+	color: white;
     padding: 2.5px;
     border: 1px solid #6668fd;
     border-radius: 3px;
 }
 
 #orange {
-	color: #f17f05;
-	padding: 3px 16.5px 3px 16.5px;
+	background-color: #f17f05;
+	color: white;
+	padding: 0 16.5px 0 16.5px;
     border: 1px solid #ff9320;
     border-radius: 3px;
 }
 
 
 #red {
-	color: red;
-	padding: 3px 19px 3px 19px;
+	background-color: red;
+	color: white;
+	padding: 0 19px 0 19px;
     border: 1px solid #f73c3c;
     border-radius: 3px;
 }
 
 #green {
-	color: green;
-	padding: 3px 14px 3px 14px;
+	background-color: green;
+	color: white;
+	padding: 0 14px 0 14px;
     border: 1px solid #25a71c;
     border-radius: 3px;
 }

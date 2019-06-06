@@ -37,7 +37,7 @@ class AddReviewForm extends React.Component {
                 <form id="reviewForm" className="review-form" onSubmit={this.props.handleSubmit(values => this.onSubmit(values, user))}>
 
                     <label htmlFor="bus_name">Business Name</label>
-                    <Field component={Input} type="text" name="bus_name" placeholder="Amazon" validate={[required, nonEmpty]} normalize={titleCase} />
+                    <Field component={Input} type="text" name="bus_name" placeholder="Exact Business Name" validate={[required, nonEmpty]} normalize={titleCase} />
                     
                     <label htmlFor="delivery">Delivery Type</label>
                     <Field component={Select} type="select" name="delivery" validate={[required, nonEmpty]}

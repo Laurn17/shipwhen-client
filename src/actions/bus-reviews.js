@@ -28,6 +28,14 @@ export const fetchBusError = (error) => ({
     error: "Something went wrong"
 });
 
+export const FETCH_MYREVIEWS_SUCCESS = 'FETCH_MYREVIEWS_SUCCESS';
+export const fetchMyReviewsSuccess = (reviews) => ({
+    type: FETCH_MYREVIEWS_SUCCESS,
+    loading: false,
+    noData: false,
+    reviews
+});
+
 // TRYING TO HANDLE SERVER RESPONSE THAT IS EMPTY
 export const FETCH_BUS_NODATA = 'FETCH_BUS_NODATA';
 export const fetchBusNoData = (bus_name) => ({
@@ -45,7 +53,7 @@ export const fetchReviewError = () => ({
 
 export const FETCH_REVIEW_SUCCESS = 'FETCH_REVIEW_SUCCESS';
 export const fetchReviewSuccess = () => ({
-    type: FETCH_REVIEW_ERROR,
+    type: FETCH_REVIEW_SUCCESS,
     loading: false
 });
 
@@ -138,5 +146,34 @@ export const submitReview = (values, user) => dispatch => {
                         })
                     );
                 })
+    );
+};
+
+// ---------------- GET USER REVIEWS FROM SERVER --------------
+export const fetchReviews = (username) => dispatch => {
+    return (
+        fetch(`${API_BASE_URL}/myreviews/${username}`, {
+            method: 'GET',
+            contentType: 'application/json',
+            dataType: 'json'
+        })
+        .then(res => {
+            if (res.length === 0) {
+                console.log("No Business shipping-time review(s) found");
+                dispatch(fetchBusNoData(`${username}`))
+                history.push("/no-business")
+                .then(err => Promise.reject());
+            }
+            return res
+        })
+        .then(bus => {
+            console.log("Found Business shipping-time review(s) successfully");
+            console.log(bus);
+            dispatch(fetchMyReviewsSuccess(bus));
+            history.push(`/myreviews/${username}`)
+        })
+        .catch(err => {
+             dispatch(fetchBusError());
+        })
     );
 };

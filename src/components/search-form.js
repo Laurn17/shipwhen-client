@@ -30,7 +30,7 @@ class SearchForm extends React.Component {
       <div className="searchForm">
         <form onSubmit={this.props.handleSubmit(values => this.onSubmit(values))}>
           <label htmlFor="busName"></label>
-          <Field component={Input} type="text" name="busName" id="busName" placeholder="Amazon" normalize={titleCase}/>
+          <Field component={Input} type="text" name="busName" id="busName" placeholder="Search Business Name" normalize={titleCase}/>
           <button type="submit" disabled={ this.props.pristine || this.props.submitting} >Submit</button>
         </form>
       </div>

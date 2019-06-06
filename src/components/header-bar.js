@@ -3,20 +3,30 @@ import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
 import {connect} from 'react-redux';
 import {clearAuth} from '../actions/auth';
 import {clearAuthToken} from '../local-storage';
+import {fetchReviews} from '../actions/bus-reviews';
 
 import './header-bar.css';
 
 export class HeaderBar extends React.Component {
+    getReviews(username) {
+        console.log("retrieving reviews");
+        return this.props.dispatch(fetchReviews(username));
+    }
+
     logOut() {
         this.props.dispatch(clearAuth());
         clearAuthToken();
     }
 
     render() {
+
         let userIcon;
+
         if (this.props.loggedIn) {
+            const username = this.props.created_by.username;
             userIcon = 
               <div>
+                <button className="bthree" onClick={() => this.getReviews(username)}>Reviews</button>
                 <button className="btwo" onClick={() => this.logOut()}>Log out</button>
               </div>
         }
@@ -48,8 +58,12 @@ export class HeaderBar extends React.Component {
     };
 };
 
-const mapStateToProps = state => ({
-    loggedIn: state.auth.currentUser !== null
-});
+const mapStateToProps = state => {
+    return {
+        loggedIn: state.auth.currentUser !== null,
+        created_by: state.auth.currentUser
+    }
+};
+
 
 export default connect(mapStateToProps)(HeaderBar);
