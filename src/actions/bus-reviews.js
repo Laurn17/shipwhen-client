@@ -164,7 +164,7 @@ export const fetchReviews = (username) => dispatch => {
                 history.push("/no-business")
                 .then(err => Promise.reject());
             }
-            return res
+            return res.json();
         })
         .then(bus => {
             console.log("Found Business shipping-time review(s) successfully");
